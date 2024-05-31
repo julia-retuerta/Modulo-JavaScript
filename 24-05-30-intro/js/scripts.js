@@ -38,6 +38,9 @@ printName('Carlos', 23); */
 
 
 
+
+// Crea una función llamada sayHello que reciba un nombre por parámetro y diga por consola "hola [nombre]".
+
 function sayHello(name){
     console.log('Hola ' + name)
 }
@@ -99,6 +102,6 @@ totalPrice (27)
 
 
 function writeMessage (name, material, size, note){
-    console.log (name + 'ha pedido una caja de ' + material + 'de tamaño ' + size + note)
+    console.log (name + ' ha pedido una caja de ' + material + ' de tamaño ' + size + '. ' + note)
 }
-writeMessage ('Juan ', 'tornillos ', 2, ' Gracias')
+writeMessage ('Juan', 'tornillos', 2, 'Gracias')
