@@ -117,7 +117,6 @@ getNumberType(0);
 getNumberType(-56); */
 
 
-/* - Crea una función que reciba un número e imprima por consola si es un número negativo, si es positivo o si es cero. */
 
 function getNumberType2 (numberG){
   if (numberG < 0){
