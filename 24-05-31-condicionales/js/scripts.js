@@ -63,6 +63,11 @@ if (number === 4) {
 /* - Crea una función que reciba un nombre y una edad e imprima por consola "Hola [nombre], eres mayor/menor de edad" en función de la edad que le pasemos. */
 
 function getAdult(name, age) {
+/* if (age <= 0){
+  console.log ('Edad incorrecta');
+  return;
+} */
+
   if (age < 18 && age >= 0) {
     console.log('Hola ' + name + ', eres' + ' menor de edad');
   } else if (age > 18) {
@@ -76,6 +81,10 @@ getAdult('Cristina', 100);
 /* - Crea una función que reciba 2 números distintos e imprima por consola cual es el mayor. */
 
 function getHigher(numberA, numberB) {
+/*   if (numberA === numberB){
+    console.log ('Valores incorrectos');
+    return;
+  } */
   if (numberA > numberB) {
     console.log(numberA);
   } else {
@@ -88,7 +97,11 @@ getHigher(2, 8);
 
 /* - Crea una función que reciba un número e imprima por consola si es un número negativo, si es positivo o si es cero. */
 
-function getNumberType(numberC) {
+/* function getNumberType(numberC) {
+  if (number === undefined){
+    console.log('Valor incorrecto');
+    return;
+  }
   if (numberC > 0) {
     console.log(numberC + ' es un número positivo');
   } else if (numberC === 0) {
@@ -98,13 +111,34 @@ function getNumberType(numberC) {
   }
 }
 
+getNumberType();
 getNumberType(38);
 getNumberType(0);
-getNumberType(-56);
+getNumberType(-56); */
+
+
+/* - Crea una función que reciba un número e imprima por consola si es un número negativo, si es positivo o si es cero. */
+
+function getNumberType2 (numberG){
+  if (numberG < 0){
+    console.log(numberG + ' es un número negativo');
+    return; //esto lo añadimos para que deje de ejecutarse la función cuando se cumpla esta condición
+  }
+  if (numberG === 0){
+    console.log(numberG + ' es cero');
+    return;
+  }
+    console.log(numberG + ' es positivo'); //aquí no hace falta poner if, esto sería una mala práctica.
+};
+
+getNumberType2(-75);
+getNumberType2(32);
+getNumberType2(0);
+
 
 /* - Crea una función que reciba 3 notas, si la media está entre 0 y 5 mostrará el mensaje "Suspenso", si la media está entre 5 y 8 mostrará "Aprobado" y si la media es 8 o más dirá "Matrícula de honor" */
 
-function getScore(scoreA, scoreB, scoreC) {
+/* function getScore(scoreA, scoreB, scoreC) {
   if ((scoreA + scoreB + scoreC) / 3 >= 0 && (scoreA + scoreB + scoreC) / 3 < 5) {
     console.log('Suspenso');
   } else if ((scoreA + scoreB + scoreC) / 3 >= 5 && (scoreA + scoreB + scoreC) / 3 < 8) {
@@ -116,7 +150,108 @@ function getScore(scoreA, scoreB, scoreC) {
 
 getScore(0, 3, 4);
 getScore(5, 7, 8);
+getScore(8, 9, 9); */
+
+/* Forma más fácil de hacerlo */
+
+/* 
+
+function getScore(scoreA, scoreB, scoreC) {
+  if (scoreA < 0 || scoreA === undefined || scoreA > 10 || scoreB < 0 || scoreB === undefined || scoreB > 10 || scoreC < 0 || scoreC === undefined || scoreC > 10){
+    console.log ('Datos incorrectos');
+  }
+  const average = (scoreA + scoreB + scoreC) / 3;
+  if (average >= 0 && average < 5) {
+    console.log('Suspenso');
+  } else if (average >= 5 && average < 8) {
+    console.log('Aprobado');
+  } else if (average >= 8 && average <= 10) {
+    console.log('Matrícula de honor');
+  }
+}
+
+getScore(0, 3, 4);
+getScore(5, 7, 8);
+getScore(8, 9, 9); */
+
+/* Forma aún más fácil de hacerlo */
+
+/* const validateScore = (score) => {
+  if(score < 0 || score === undefined || score > 10){
+    return true;
+  }
+  return false;
+}
+
+const getScore = (scoreA, scoreB, scoreC) => {
+  if (validateScore (scoreA) || validateScore (scoreB) || validateScore (scoreC)){
+    console.log ('Datos incorrectos');
+    return;
+  }
+  const average = (scoreA + scoreB + scoreC) / 3;
+  if (average >= 0 && average < 5) {
+    console.log('Suspenso');
+  } else if (average >= 5 && average < 8) {
+    console.log('Aprobado');
+  } else if (average >= 8 && average <= 10) {
+    console.log('Matrícula de honor');
+  }
+}
+
+getScore(0, 3, 4);
+getScore(5, 7, 8);
+getScore(8, 9, 9); */
+
+
+/* Forma aún más y más fácil de hacerlo */
+
+/* const validateScore = score => {
+  return score < 0 || score === undefined || score > 10
+}
+
+const getScore = (scoreA, scoreB, scoreC) => {
+  if (validateScore (scoreA) || validateScore (scoreB) || validateScore (scoreC)){
+    console.log ('Datos incorrectos');
+    return;
+  }
+  const average = (scoreA + scoreB + scoreC) / 3;
+  if (average >= 0 && average < 5) {
+    console.log('Suspenso');
+  } else if (average >= 5 && average < 8) {
+    console.log('Aprobado');
+  } else if (average >= 8 && average <= 10) {
+    console.log('Matrícula de honor');
+  }
+}
+
+getScore(0, 3, 4);
+getScore(5, 7, 8);
+getScore(8, 9, 9); */
+
+/* Forma aún más y más fácil de hacerlo */
+
+const validateScore = score =>  score < 0 || score === undefined || score > 10
+
+const getScore = (scoreA, scoreB, scoreC) => {
+  if (validateScore (scoreA) || validateScore (scoreB) || validateScore (scoreC)){
+    console.log ('Datos incorrectos');
+    return;
+  }
+  const average = (scoreA + scoreB + scoreC) / 3;
+  if (average >= 0 && average < 5) {
+    console.log('Suspenso');
+  } else if (average >= 5 && average < 8) {
+    console.log('Aprobado');
+  } else if (average >= 8 && average <= 10) {
+    console.log('Matrícula de honor');
+  }
+}
+
+getScore(0, 3, 4);
+getScore(5, 7, 8);
 getScore(8, 9, 9);
+
+
 
 /* - Crea una función que reciba tres números y devuelva el mayor de ellos. */
 
@@ -125,8 +260,10 @@ function getHigher2(numberD, numberE, numberF) {
     console.log(numberD);
   } else if (numberE > numberD && numberE > numberF) {
     console.log(numberE);
-  } else {
+  } else if (numberF > numberD && numberF > numberE) {
     console.log(numberF);
+  } else {
+    console.log ('Algunos valores son iguales');
   }
 }
 
@@ -136,8 +273,8 @@ getHigher2(56, 20, 34);
 
 /* - Crea una función que reciba un número entero y devuelva "Es divisible por 3" si es divisible por 3, "Es divisible por 5" si es divisible por 5, y "Es divisible por 3 y por 5" si es divisible por ambos. Si no es divisible por ninguno, devuelve el número. */
 
-function getDivisibleBy(integerA) {
-  if (integerA % 3 === 0 && integerA % 5 === 0) {
+/* function getDivisibleBy(integerA) */ /* =>  le añadió las flechas a todas las funciones y en vez de function puso const. Esta forma es mejor que function porque más adelante si no dará problemas*/ /*{
+   if (integerA % 3 === 0 && integerA % 5 === 0) {
     console.log('Es divisible por 3 y por 5');
   } else if (integerA % 5 === 0) {
     console.log('Es divisible por 5');
@@ -151,7 +288,23 @@ function getDivisibleBy(integerA) {
 getDivisibleBy(-30);
 getDivisibleBy(6);
 getDivisibleBy(25);
-getDivisibleBy(-49);
+getDivisibleBy(-49); */
+
+function getDivisibleBy(integerA) {
+  if (integerA % 3 === 0 && integerA % 5 === 0) {
+    return 'Es divisible por 3 y por 5';
+  } else if (integerA % 5 === 0) {
+   return 'Es divisible por 5';
+  } else if (integerA % 3 === 0) {
+    console.log('Es divisible por 3');
+  } else {
+    return integerA;
+  }
+}
+
+const divisible = getDivisibleBy(15);
+console.log(divisible);
+
 
 /* - Crea una función que reciba un número entero y determine si es par o impar. Imprime por consola "Es un número par" o "Es un número impar" en función del resultado. */
 
@@ -180,3 +333,19 @@ leap(1980);
 leap(1991);
 leap(2000);
 leap(2023);
+
+
+/* - Crea una función que reciba dos valores y los sume, la función debe sumar los valores aunque se los mandemos en formato string y SÓLO debe convertirlos a number si llegan como string. */
+
+const sumNumbers = (numberH, numberI) => {
+  if (typeof numberH === 'string'){
+    numberH = Number (numberH);
+  }
+  if (typeof numberI === 'string'){
+    numberI = Number (numberI);
+  }
+
+  console.log (numberH + numberI);
+};
+
+sumNumbers(3, '8');
