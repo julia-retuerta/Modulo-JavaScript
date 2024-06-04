@@ -15,7 +15,6 @@ if (numberA > numberB) {
 
 numberA > numberB ? console.log('A es mayor que B') : console.log('B es mayor que A');
 
-
 /* MATH */
 
 /* Los objetos siempre van con la inicial en mayúscula. Después se pone un punto para acceder a la inf que queremos */
@@ -47,8 +46,6 @@ console.log(Math.random() * 11);
 
 //genera un nº semialeatorio entre 0 y 5 y lo redondea hacia abajo
 console.log(Math.floor(Math.random() * 5));
-
-
 
 /* STRINGS */
 
@@ -102,10 +99,6 @@ const age = 23;
 console.log('Hola ' + name + '. Tienes ' + age + ' años.');
 console.log(`Hola ${name}. Tienes ${age} años.`);
 
-
-
-
-
 /* EJERCICIOS CON STRINGS */
 
 /* - Crea una función que reciba una palabra, si la palabra tiene más de 5 caracteres la imprimirá en mayúsculas, si no en minúsculas. Resuélvelo con un if-else */
@@ -122,7 +115,6 @@ letters('mesa');
 letters('papel');
 letters('estuche');
 
-
 /* - Repite el ejercicio anterior pero con un operador ternario. */
 
 const letters2 = wordA => {
@@ -133,19 +125,18 @@ letters2('mesa');
 letters2('papel');
 letters2('estuche');
 
-
 /* - Crea una función que reciba 2 verbos. La función debe imprimir a qué conjugación pertenecen. Por ejemplo, si la función recibe "andar" y "correr" debe imprimir "El verbo andar es de la primera conjugación y el verbo correr de la segunda conjugación". */
 
-/* const validateVerb = verb => {
+const validateVerb = verb => {
   if (verb.endsWith('ar')) {
     return 'primera conjugación';
   }
-  
-  if (verb.endsWith('er')) {
+
+  /* else */ if (verb.endsWith('er')) {
     return 'segunda conjugación';
   }
-  
-  if (verb.endsWith('ir')) {
+
+  /* else */ if (verb.endsWith('ir')) {
     return 'tercera conjugación';
   }
 
@@ -160,11 +151,11 @@ twoVerbs('viajar', 'cocinar');
 twoVerbs('estudiar', 'leer');
 twoVerbs('beber', 'comer');
 twoVerbs('ver', 'vivir');
-twoVerbs('escribir', 'abrir'); */
-
+twoVerbs('escribir', 'abrir');
 
 /* Resolución en clase */
 
+/* Esta es la versión larga que no hay que hacer porque si se introdujera otro parámetro, aumentarían las posibilidades exponencialmente */
 
 /* const getConjugation = (verb1, verb2) => {
   if(verb1.endsWith('ar') && verb2.endsWith('ar')){
@@ -173,48 +164,40 @@ twoVerbs('escribir', 'abrir'); */
   // y así sucesivamente...
 } */
 
+/* Esta es una resolución optimizada */
 
 /* const validateVerb = verb => {
   if (verb.endsWith('ar')) {
     return 'primera conjugación';
-  }
-  
-  if (verb.endsWith('er')) {
+  } else if (verb.endsWith('er')) {
     return 'segunda conjugación';
-  }
-  
-  if (verb.endsWith('ir')) {
+  } else if (verb.endsWith('ir')) {
     return 'tercera conjugación';
   }
-
   return false;
 };
 
-
 const getConjugations = (verbA, verbB) => {
-  const verb1Result = checkConjugation(verb1);
-  const verb2Result = checkConjugation(verb2);
+  const verbAResult = validateVerb(verbA);
+  const verbBResult = validateVerb(verbB);
 
-
-  if (!verb1Result || !verb2Result){
+  if (!verbAResult || !verbBResult) {
     console.log('Uno de los verbos es incorrecto');
     return;
-  }
+  };
 
-
-  console.log(`El verbo ${verbA} es de la ${verb1Result} y el verbo ${verbB} es de la ${verb2Result}`);
+  console.log(`El verbo ${verbA} es de la ${verbAResult} y el verbo ${verbB} es de la ${verbBResult}`);
 };
 
-getConjugations('viajar', 'cocinar');
+getConjugations('viajur', 'cocinur');
 getConjugations('estudiar', 'leer');
 getConjugations('beber', 'comer');
 getConjugations('ver', 'vivir');
 getConjugations('escribir', 'abrir'); */
 
-
-
-
 /* - Crear una función llamada generateWord que reciba 3 palabras y genere una palabra usando 2 letras de cada palabra. Por ejemplo, "Hola", "Adios" y "Mano" podrían generar "aldona". */
+
+/* Esta versión no coge dos letras aleatorias */
 
 /* const generateWord = (wordC, wordD, wordE) => {
   console.log(wordC.substring(3, 5) + wordD.substring(0, 2) + wordE.substring(1, 3));
@@ -222,24 +205,25 @@ getConjugations('escribir', 'abrir'); */
 
 generateWord('ordenador', 'vaso', 'estuche'); */
 
-
-
 /* Resolución en clase versión larga */
 
 /* const generateWord = (wordA, wordB, wordC) => {
-  const randomNumberA = Math.floor (Math.random() * wordA.length);
-  const randomNumberB = Math.floor (Math.random() * wordB.length);
-  const randomNumberC = Math.floor (Math.random() * wordC.length);
-  const randomNumberD = Math.floor (Math.random() * wordD.length);
-  const randomNumberE = Math.floor (Math.random() * wordE.length);
-  const randomNumberF = Math.floor (Math.random() * wordF.length);
+  const randomNumberA = Math.floor(Math.random() * wordA.length);
+  const randomNumberB = Math.floor(Math.random() * wordB.length);
+  const randomNumberC = Math.floor(Math.random() * wordC.length);
+  const randomNumberD = Math.floor(Math.random() * wordD.length);
+  const randomNumberE = Math.floor(Math.random() * wordE.length);
+  const randomNumberF = Math.floor(Math.random() * wordF.length);
 
-
-  console.log {
+  console.log(
     wordA.charAt(randomNumberA) +
-    wordA.charAt(randomNumbeBA) +
-  }
-}
+      wordB.charAt(randomNumberB) +
+      wordC.charAt(randomNumberC) +
+      wordD.charAt(randomNumberD) +
+      wordE.charAt(randomNumberE) +
+      wordF.charAt(randomNumberF)
+  );
+};
 
 generateWord('Hola', 'Adiós', 'Mano'); */
 
@@ -264,7 +248,6 @@ const generateWord = (wordA, wordB, wordC) => {
 
 generateWord('Hola', 'Adiós', 'Mano');
 
-
 /* - Crea una función que reciba un email e imprima por separado el nombre y el dominio. Por ejemplo, si recibe "dorian@gmail.com" deberá imprimir "El usuario es dorian" y por otro lado "El dominio es gmail.com". */
 
 /* const indexAt = at => {
@@ -278,15 +261,14 @@ const indexDomain = domain => {
 };
  */
 
-const getNameAndDomain = (email) => {
-  const atPosition = email.indexOf ('@');
+const getNameAndDomain = email => {
+  const atPosition = email.indexOf('@');
   const name = email.substring(0, atPosition);
   const domain = email.substring(atPosition + 1);
-  console.log(`El usuario es ${name}. El dominio es ${domain}`)
-}
+  console.log(`El usuario es ${name}. El dominio es ${domain}`);
+};
 
-
-getNameAndDomain('hola@trazos.net')
+getNameAndDomain('hola@trazos.net');
 
 /* - Crea una función que reciba una palabra e imprime por consola una letra aleatoria de esa palabra. */
 
@@ -302,9 +284,7 @@ const getRandomLetter = word => {
   console.log(randomLetter);
 };
 
-getRandomLetter ('Ordenador');
-
-
+getRandomLetter('Ordenador');
 
 /* - Crea una función que reciba una palabra de 5 letras y la devuelva intercalando mayúsculas y minúsculas, por ejemplo adios, sería aDiOs */
 
@@ -317,11 +297,15 @@ getRandomLetter ('Ordenador');
 
 upperLowerCase('piano'); */
 
-
 const intercalateLetters = word => {
-  console.log(word.charAt(0).toLowerCase() + word.charAt(1).toUpperCase() + word.charAt(2).toLowerCase() + word.charAt(3).toUpperCase() + word.charAt(4).toLowerCase());
+  console.log(
+    word.charAt(0).toLowerCase() +
+      word.charAt(1).toUpperCase() +
+      word.charAt(2).toLowerCase() +
+      word.charAt(3).toUpperCase() +
+      word.charAt(4).toLowerCase()
+  );
 };
-
 
 intercalateLetters('Adiós');
 
@@ -336,96 +320,104 @@ console.log(user); */
 
 const generateUserName = (name, surname) => {
   const userNameAndSurname = name.charAt(0).toUpperCase() + surname;
-  const randomNumber =  Math.ceil(Math.random() * 100);
+  const randomNumber = Math.ceil(Math.random() * 100);
 
   console.log(userNameAndSurname + randomNumber);
 };
 
 generateUserName('Juan', 'Pérez');
 
-
+/* EJERCICIOS 4 JUNIO 2024 */
 
 /* Crea una función que reciba una palabra cualquiera e imprima la palabra con la primera y la última letra en mayúsculas */
 
-
-/* const firstLastLetterUpperCase = word => {
-
-  const first = word.charAt(0).toUpperCase();
-  const last = word.charAt (word.length -1).toUpperCase();
-  const middle = word.substring(1, (word.length -1)).toLowerCase();
-  
-  console.log(first + middle + last);
-};
-
-firstLastLetterUpperCase('ordenador'); */
-
-/* Ahora haz que la letra del medio sea también una mayúscula */
-
 const firstLastLetterUpperCase = word => {
-
   const first = word.charAt(0).toUpperCase();
-  const last = word.charAt (word.length -1).toUpperCase();
+  const last = word.charAt(word.length - 1).toUpperCase();
+  const middle = word.substring(1, word.length - 1).toLowerCase();
 
-  const middlePosition = Math.floor(word.length / 2);
-
-  const middleLetter = word.charAt(middlePosition).toUpperCase();
-
-  const firstSegment = word.substring(1, middlePosition);
-  const secondSegment = word.substring(middlePosition + 1, word.length -1);
-  
-
-  console.log(first + firstSegment + middleLetter + secondSegment + last);
+  console.log(first + middle + last);
 };
 
 firstLastLetterUpperCase('ordenador');
 
+/* Ahora haz que la letra del medio sea también una mayúscula */
 
+const firstMiddleLastLetterUpperCase = word => {
+  const first = word.charAt(0).toUpperCase();
+  const last = word.charAt(word.length - 1).toUpperCase();
 
-/* TEORÍA 4 JUNIO */
+  const middlePosition = Math.floor(word.length / 2); //para obtener la posición del medio de la palabra
 
-//esto va a salir en minúsculas
+  const middleLetter = word.charAt(middlePosition).toUpperCase(); //para transformar la letra del medio en mayúscula
 
-const word = 'hola'
+  const firstSegment = word.substring(1, middlePosition);
+  const secondSegment = word.substring(middlePosition + 1, word.length - 1);
 
+  console.log(first + firstSegment + middleLetter + secondSegment + last);
+};
+
+firstMiddleLastLetterUpperCase('ordenador');
+
+/* TEORÍA 4 JUNIO 2024 */
+
+//esto va a salir en minúsculas. No se modifica la cadena original
+const word = 'hola';
 word.toUpperCase();
-
 console.log(word);
 
-
 //esto sale en mayúsculas
-
-const wordL = 'hola'
-
-console.log (wordL.toUpperCase());
-
+const wordTwo = 'hola';
+console.log(wordTwo.toUpperCase());
 
 /* Función que recibe dos palabras y las devuelve unidas por un guión */
 
+const wordHyphenWord = (wordM, wordN) => {
+  console.log(wordM + '-' + wordN);
+};
 
-const wordHyphenWord = (word1, word2) => {
-console.log(word1 + '-' + word2)
-
-}
-
-wordHyphenWord ('clase', 'silla')
-
+wordHyphenWord('clase', 'silla');
 
 /* Función que recibe una palabra de 5 letras y te dice cuántas vocales tiene */
 
 const howManyVowels = word => {
-  if (word.length = 5);
+  if (word.length !== 5) {
+    console.log('Esta palabra no tiene 5 letras');
+    return;
+  }
+};
 
+const vowel1 = 'a';
+const vowel2 = 'e';
+const vowel3 = 'i';
+const vowel4 = 'o';
+const vowel5 = 'u';
 
+if (word.includes(vowel1, vowel2, vowel3, vowel4, vowel5)) {
 }
 
-if word.charAt(0).includes('a');
+howManyVowels('cesta');
 
+/* Función que recibe una palabra de 5 letras y la imprime al revés. Ejemplo: Adios sería soiaD */
 
+const wordBackwards = word => {
+  if (word.length !== 5) {
+    console.log('Esta palabra no tiene 5 letras');
+    return;
+  }
+  console.log(word.charAt(4) + word.charAt(3) + word.charAt(2) + word.charAt(1) + word.charAt(0));
+};
 
-howManyVowels('murcielago')
-
-/* Función que recibe una palabra de 5 letras y la imprime al revés. Ejemplo: Adios soiaD */
+wordBackwards('móvil');
 
 /* Crea una función llamada sumDigits que tome un número de 3 cifras como parámetro y devuelva la suma de sus dígitos. Para el número 123 el resultado debería ser 6 */
 
+const sumDigits = number => {
+  if (number < 100 || number > 999) {
+    return 'Este número no tiene 3 cifras';
+  }
 
+  console.log(number.charAt(0) + number.charAt(1) + number.charAt(2));
+};
+
+sumDigits(123);
