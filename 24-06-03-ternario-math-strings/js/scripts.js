@@ -111,7 +111,7 @@ console.log(`Hola ${name}. Tienes ${age} años.`);
 /* - Crea una función que reciba una palabra, si la palabra tiene más de 5 caracteres la imprimirá en mayúsculas, si no en minúsculas. Resuélvelo con un if-else */
 
 const letters = wordA => {
-  if (wordA.length >= 5) {
+  if (wordA.length > 5) {
     console.log(wordA.toUpperCase());
   } else {
     console.log(wordA.toLowerCase());
@@ -120,6 +120,7 @@ const letters = wordA => {
 
 letters('mesa');
 letters('papel');
+letters('estuche');
 
 
 /* - Repite el ejercicio anterior pero con un operador ternario. */
@@ -129,44 +130,144 @@ const letters2 = wordA => {
 };
 
 letters2('mesa');
-letters2('papelera');
+letters2('papel');
+letters2('estuche');
 
 
 /* - Crea una función que reciba 2 verbos. La función debe imprimir a qué conjugación pertenecen. Por ejemplo, si la función recibe "andar" y "correr" debe imprimir "El verbo andar es de la primera conjugación y el verbo correr de la segunda conjugación". */
 
-const validateVerb = verb => {
+/* const validateVerb = verb => {
   if (verb.endsWith('ar')) {
-    return `primera conjugación`;
-  } else if (verb.endsWith('er')) {
-    return `segunda conjugación`;
-  } else {
-    return `tercera conjugación`;
+    return 'primera conjugación';
   }
+  
+  if (verb.endsWith('er')) {
+    return 'segunda conjugación';
+  }
+  
+  if (verb.endsWith('ir')) {
+    return 'tercera conjugación';
+  }
+
+  return 'verbo incorrecto';
 };
 
 const twoVerbs = (verbA, verbB) => {
-  console.log(`El verbo ${verbA} es de la ${validateVerb} y el verbo ${verbB} es de la ${validateVerb}`);
+  console.log(`El verbo ${verbA} es de la ${validateVerb(verbA)} y el verbo ${verbB} es de la ${validateVerb(verbB)}`);
 };
 
 twoVerbs('viajar', 'cocinar');
 twoVerbs('estudiar', 'leer');
 twoVerbs('beber', 'comer');
 twoVerbs('ver', 'vivir');
-twoVerbs('escribir', 'abrir');
+twoVerbs('escribir', 'abrir'); */
+
+
+/* Resolución en clase */
+
+
+/* const getConjugation = (verb1, verb2) => {
+  if(verb1.endsWith('ar') && verb2.endsWith('ar')){
+    console.log(`El verbo ${verb1} es de la primera conjugación y el verbo ${verb2} es de la primera conjugación`)
+  }
+  // y así sucesivamente...
+} */
+
+
+/* const validateVerb = verb => {
+  if (verb.endsWith('ar')) {
+    return 'primera conjugación';
+  }
+  
+  if (verb.endsWith('er')) {
+    return 'segunda conjugación';
+  }
+  
+  if (verb.endsWith('ir')) {
+    return 'tercera conjugación';
+  }
+
+  return false;
+};
+
+
+const getConjugations = (verbA, verbB) => {
+  const verb1Result = checkConjugation(verb1);
+  const verb2Result = checkConjugation(verb2);
+
+
+  if (!verb1Result || !verb2Result){
+    console.log('Uno de los verbos es incorrecto');
+    return;
+  }
+
+
+  console.log(`El verbo ${verbA} es de la ${verb1Result} y el verbo ${verbB} es de la ${verb2Result}`);
+};
+
+getConjugations('viajar', 'cocinar');
+getConjugations('estudiar', 'leer');
+getConjugations('beber', 'comer');
+getConjugations('ver', 'vivir');
+getConjugations('escribir', 'abrir'); */
+
+
 
 
 /* - Crear una función llamada generateWord que reciba 3 palabras y genere una palabra usando 2 letras de cada palabra. Por ejemplo, "Hola", "Adios" y "Mano" podrían generar "aldona". */
 
-const generateWord = (wordC, wordD, wordE) => {
+/* const generateWord = (wordC, wordD, wordE) => {
   console.log(wordC.substring(3, 5) + wordD.substring(0, 2) + wordE.substring(1, 3));
 };
 
-generateWord('ordenador', 'vaso', 'estuche');
+generateWord('ordenador', 'vaso', 'estuche'); */
+
+
+
+/* Resolución en clase versión larga */
+
+/* const generateWord = (wordA, wordB, wordC) => {
+  const randomNumberA = Math.floor (Math.random() * wordA.length);
+  const randomNumberB = Math.floor (Math.random() * wordB.length);
+  const randomNumberC = Math.floor (Math.random() * wordC.length);
+  const randomNumberD = Math.floor (Math.random() * wordD.length);
+  const randomNumberE = Math.floor (Math.random() * wordE.length);
+  const randomNumberF = Math.floor (Math.random() * wordF.length);
+
+
+  console.log {
+    wordA.charAt(randomNumberA) +
+    wordA.charAt(randomNumbeBA) +
+  }
+}
+
+generateWord('Hola', 'Adiós', 'Mano'); */
+
+/* Resolución en clase versión corta */
+
+const getTwoRandomLetters = word => {
+  const randomNumberA = Math.floor(Math.random() * word.length); //obtener 2 letras aleatorias de cada palabra. Hay que multiplicarlo por el word length para multiplicarlo por el máximo de letras que tenga esa palabra.
+  const randomNumberB = Math.floor(Math.random() * word.length);
+  const firstLetter = word.charAt(randomNumberA);
+  const secondLetter = word.charAt(randomNumberB);
+
+  return firstLetter + secondLetter;
+};
+
+const generateWord = (wordA, wordB, wordC) => {
+  const first = getTwoRandomLetters(wordA);
+  const second = getTwoRandomLetters(wordB);
+  const third = getTwoRandomLetters(wordC);
+
+  console.log(first + second + third);
+};
+
+generateWord('Hola', 'Adiós', 'Mano');
 
 
 /* - Crea una función que reciba un email e imprima por separado el nombre y el dominio. Por ejemplo, si recibe "dorian@gmail.com" deberá imprimir "El usuario es dorian" y por otro lado "El dominio es gmail.com". */
 
-const indexAt = at => {
+/* const indexAt = at => {
   console.log(at.indexOf('@'));
 };
 
@@ -175,34 +276,156 @@ indexAt('julia@gmail.com');
 const indexDomain = domain => {
   console.log(domain.substring(5));
 };
+ */
 
+const getNameAndDomain = (email) => {
+  const atPosition = email.indexOf ('@');
+  const name = email.substring(0, atPosition);
+  const domain = email.substring(atPosition + 1);
+  console.log(`El usuario es ${name}. El dominio es ${domain}`)
+}
+
+
+getNameAndDomain('hola@trazos.net')
 
 /* - Crea una función que reciba una palabra e imprime por consola una letra aleatoria de esa palabra. */
 
-const printLetter = wordF => {
+/* const printLetter = wordF => {
   console.log(wordF.charAt(1));
 };
 
-printLetter('teclado');
+printLetter('teclado'); */
+
+const getRandomLetter = word => {
+  const randomNumber = Math.floor(Math.random() * word.length);
+  const randomLetter = word.charAt(randomNumber);
+  console.log(randomLetter);
+};
+
+getRandomLetter ('Ordenador');
+
 
 
 /* - Crea una función que reciba una palabra de 5 letras y la devuelva intercalando mayúsculas y minúsculas, por ejemplo adios, sería aDiOs */
 
-const upperLowerCase = word5Letters => {
+/* const upperLowerCase = word5Letters => {
   if (word5Letters.length !== 5) {
     console.log('Esta palabra no tiene 5 letras.');
     return;
   }
 };
 
-upperLowerCase('piano');
+upperLowerCase('piano'); */
 
+
+const intercalateLetters = word => {
+  console.log(word.charAt(0).toLowerCase() + word.charAt(1).toUpperCase() + word.charAt(2).toLowerCase() + word.charAt(3).toUpperCase() + word.charAt(4).toLowerCase());
+};
+
+
+intercalateLetters('Adiós');
 
 /* - Crea una función que reciba un nombre y un apellido, y devuelva un nombre de usuario compuesto por la primera letra del nombre, el apellido completo, y un número aleatorio del 1 al 100. Por ejemplo, "Juan Perez" podría convertirse en "JPerez87". */
 
-const userName = (name, surname) => {
-  return name.charAt(0) + surname + Math.round(Math.random() * 101);
+/* const userName = (name, surname) => {
+  return name.charAt(0).toUpperCase + surname + Math.ceil(Math.random() * 100);
 };
 
 const user = userName('Natalia', 'Fernández');
-console.log(user);
+console.log(user); */
+
+const generateUserName = (name, surname) => {
+  const userNameAndSurname = name.charAt(0).toUpperCase() + surname;
+  const randomNumber =  Math.ceil(Math.random() * 100);
+
+  console.log(userNameAndSurname + randomNumber);
+};
+
+generateUserName('Juan', 'Pérez');
+
+
+
+/* Crea una función que reciba una palabra cualquiera e imprima la palabra con la primera y la última letra en mayúsculas */
+
+
+/* const firstLastLetterUpperCase = word => {
+
+  const first = word.charAt(0).toUpperCase();
+  const last = word.charAt (word.length -1).toUpperCase();
+  const middle = word.substring(1, (word.length -1)).toLowerCase();
+  
+  console.log(first + middle + last);
+};
+
+firstLastLetterUpperCase('ordenador'); */
+
+/* Ahora haz que la letra del medio sea también una mayúscula */
+
+const firstLastLetterUpperCase = word => {
+
+  const first = word.charAt(0).toUpperCase();
+  const last = word.charAt (word.length -1).toUpperCase();
+
+  const middlePosition = Math.floor(word.length / 2);
+
+  const middleLetter = word.charAt(middlePosition).toUpperCase();
+
+  const firstSegment = word.substring(1, middlePosition);
+  const secondSegment = word.substring(middlePosition + 1, word.length -1);
+  
+
+  console.log(first + firstSegment + middleLetter + secondSegment + last);
+};
+
+firstLastLetterUpperCase('ordenador');
+
+
+
+/* TEORÍA 4 JUNIO */
+
+//esto va a salir en minúsculas
+
+const word = 'hola'
+
+word.toUpperCase();
+
+console.log(word);
+
+
+//esto sale en mayúsculas
+
+const wordL = 'hola'
+
+console.log (wordL.toUpperCase());
+
+
+/* Función que recibe dos palabras y las devuelve unidas por un guión */
+
+
+const wordHyphenWord = (word1, word2) => {
+console.log(word1 + '-' + word2)
+
+}
+
+wordHyphenWord ('clase', 'silla')
+
+
+/* Función que recibe una palabra de 5 letras y te dice cuántas vocales tiene */
+
+const howManyVowels = word => {
+  if (word.length = 5);
+
+
+}
+
+if word.charAt(0).includes('a');
+
+
+
+howManyVowels('murcielago')
+
+/* Función que recibe una palabra de 5 letras y la imprime al revés. Ejemplo: Adios soiaD */
+
+/* Crea una función llamada sumDigits que tome un número de 3 cifras como parámetro y devuelva la suma de sus dígitos. Para el número 123 el resultado debería ser 6 */
+
+
