@@ -398,6 +398,50 @@ if (word.includes(vowel1, vowel2, vowel3, vowel4, vowel5)) {
 
 howManyVowels('cesta');
 
+/* Resolución en clase versión larga */
+
+/* const countVowels = word => {
+  let vowelsCounter = 0; //tiene que ser let para poder cambiar el valor
+
+  if (
+    word.charAt(0) === 'a' ||
+    word.charAt(0) === 'e' ||
+    word.charAt(0) === 'i' ||
+    word.charAt(0) === 'o' ||
+    word.charAt(0) === 'u'
+  ) {
+    vowelsCounter++;
+  }
+}; */
+
+/* Resolución en clase versión corta */
+
+const countVowels = word => {
+  let vowelsCounter = 0; //tiene que ser let para poder cambiar el valor
+
+  const vowels = 'aeiouAEIOUáéíóú';
+  if (vowels.includes(word.charAt(0))) {
+    vowelsCounter++;
+  }
+  if (vowels.includes(word.charAt(1))) {
+    vowelsCounter++;
+  }
+  if (vowels.includes(word.charAt(2))) {
+    vowelsCounter++;
+  }
+  if (vowels.includes(word.charAt(3))) {
+    vowelsCounter++;
+  }
+  if (vowels.includes(word.charAt(4))) {
+    vowelsCounter++;
+  }
+
+  console.log(`La palabra ${word} tiene ${vowelsCounter} vocales`);
+};
+
+
+countVowels('Adiós');
+
 /* Función que recibe una palabra de 5 letras y la imprime al revés. Ejemplo: Adios sería soiaD */
 
 const wordBackwards = word => {
@@ -412,12 +456,25 @@ wordBackwards('móvil');
 
 /* Crea una función llamada sumDigits que tome un número de 3 cifras como parámetro y devuelva la suma de sus dígitos. Para el número 123 el resultado debería ser 6 */
 
-const sumDigits = number => {
+/* const sumDigits = number => {
   if (number < 100 || number > 999) {
     return 'Este número no tiene 3 cifras';
   }
-
-  console.log(number.charAt(0) + number.charAt(1) + number.charAt(2));
+  else {
+    const numberString = number.toString();
+    console.log(Number(numberString.charAt(0)) + Number(numberString.charAt(1)) + Number(numberString.charAt(2)));
+  }
 };
 
-sumDigits(123);
+sumDigits(123); */
+
+const sumDigits = number => {
+  const numberString = String(number);
+  const firstNumber = numberString.charAt(0);
+  const secondNumber = numberString.charAt(1);
+  const thirdNumber = numberString.charAt(2);
+
+  console.log(Number(firstNumber) + Number(secondNumber) + Number(thirdNumber));
+};
+
+sumDigits(453);
