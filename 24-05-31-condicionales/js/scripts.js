@@ -270,6 +270,8 @@ getHigher2(93, 13, 74);
 getHigher2(51, 70, 28);
 getHigher2(56, 20, 34);
 
+
+
 /* - Crea una función que reciba un número entero y devuelva "Es divisible por 3" si es divisible por 3, "Es divisible por 5" si es divisible por 5, y "Es divisible por 3 y por 5" si es divisible por ambos. Si no es divisible por ninguno, devuelve el número. */
 
 /* function getDivisibleBy(integerA) */ /* =>  le añadió las flechas a todas las funciones y en vez de function puso const. Esta forma es mejor que function porque más adelante si no dará problemas*/ /*{
@@ -305,6 +307,7 @@ const divisible = getDivisibleBy(15);
 console.log(divisible);
 
 
+
 /* - Crea una función que reciba un número entero y determine si es par o impar. Imprime por consola "Es un número par" o "Es un número impar" en función del resultado. */
 
 function evenOdd(integerB) {
@@ -317,6 +320,8 @@ function evenOdd(integerB) {
 
 evenOdd(2);
 evenOdd(3);
+
+
 
 /* - Crea una función que reciba un año y determine si es un año bisiesto. Un año es bisiesto si es divisible por 4, pero no es divisible por 100, a menos que también sea divisible por 400. Imprime por consola "Es un año bisiesto" o "No es un año bisiesto" en función del resultado */
 
@@ -332,6 +337,7 @@ leap(1980);
 leap(1991);
 leap(2000);
 leap(2023);
+
 
 
 /* - Crea una función que reciba dos valores y los sume, la función debe sumar los valores aunque se los mandemos en formato string y SÓLO debe convertirlos a number si llegan como string. */

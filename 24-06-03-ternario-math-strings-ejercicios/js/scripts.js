@@ -1,104 +1,3 @@
-/* OPERADOR TERNARIO */
-
-const numberA = 8;
-const numberB = 5;
-if (numberA > numberB) {
-  console.log('A es mayor que B');
-} else {
-  console.log('B es mayor que A');
-}
-
-//condición ? true : false
-/* el ternario se usa cuando se tiene un if y luego un else, cuando es sencillo. */
-
-//las líneas de aariba equivalen a esta línea de abajo
-
-numberA > numberB ? console.log('A es mayor que B') : console.log('B es mayor que A');
-
-/* MATH */
-
-/* Los objetos siempre van con la inicial en mayúscula. Después se pone un punto para acceder a la inf que queremos */
-
-//lo que sale sugerido en azul son propiedades
-
-console.log(Math.PI);
-console.log(Math.E);
-
-//lo que sale sugerido en morado son métodos. Siempre van entre paréntesis
-
-//pow es para elevar un número
-console.log(Math.pow(2, 3));
-
-//round es para redondear un nº al entero más cercano
-console.log(Math.round(4.9));
-
-//floor es para redondear hacia abajo
-console.log(Math.floor(4.9));
-
-//ceil es para redondear hacia arriba
-console.log(Math.ceil(4.9));
-
-//random genera un nº semialeatorio entre 0 y 1
-console.log(Math.random());
-
-//genera un nº semialeatorio entre 0 y 10
-console.log(Math.random() * 11);
-
-//genera un nº semialeatorio entre 0 y 5 y lo redondea hacia abajo
-console.log(Math.floor(Math.random() * 5));
-
-/* STRINGS */
-
-/* Los strings solo tienen la propiedad de length */
-
-const word1 = 'Hola';
-console.log(word1.length);
-
-/* El resto de cosas que tienen son métodos y de esos hay unos cuantos, a diferencia de la propiedad length */
-
-/* charAt es para saber qué letra está en cierta posición. charAt tiene índice 0, es decir, que la primera letra que cuenta siempre es 0 */
-const word2 = 'Hello';
-console.log(word2.charAt(4));
-
-/* siempre se escribe length -1 para obtener la última letra de un string */
-const word3 = 'Mesa';
-console.log(word3.charAt(word3.length - 1));
-
-/* includes es para saber si una palabra incluye los caracteres que se buscan. Responde con true o false */
-const word4 = 'Monitor';
-console.log(word4.includes('ni'));
-
-/* indexOf es para que diga en qué posición se encuentra una letra. Si no encuentra nada devuelve -1 */
-const word5 = 'Monitor';
-console.log(word5.indexOf('m'));
-
-/* toLowerCase es para transformar un string a minúsculas */
-const word6 = 'Monitor';
-console.log(word6.toLowerCase());
-
-/* toUpperCase es para transformar un string a mayúsculas */
-const word7 = 'Monitor';
-console.log(word7.toUpperCase());
-
-/* startsWith es para saber si un string empieza por. Devuelve true o false */
-const word8 = 'Monitor';
-console.log(word8.startsWith('Mo'));
-
-/* endsWith es para saber si un string termina en. Devuelve true o false */
-const word9 = 'Monitor';
-console.log(word9.endsWith('or'));
-
-/* substring es para extraer un trozo de la cadena */
-const word10 = 'Monitor';
-console.log(word10.substring(3, 5));
-
-/* estas comillas `` sirven para evitar escribir un texto de manera tan complicada */
-const name = 'Carlos';
-const age = 23;
-
-console.log('Hola ' + name + '. Tienes ' + age + ' años.');
-console.log(`Hola ${name}. Tienes ${age} años.`);
-
 /* EJERCICIOS CON STRINGS */
 
 /* - Crea una función que reciba una palabra, si la palabra tiene más de 5 caracteres la imprimirá en mayúsculas, si no en minúsculas. Resuélvelo con un if-else */
@@ -115,6 +14,8 @@ letters('mesa');
 letters('papel');
 letters('estuche');
 
+
+
 /* - Repite el ejercicio anterior pero con un operador ternario. */
 
 const letters2 = wordA => {
@@ -124,6 +25,8 @@ const letters2 = wordA => {
 letters2('mesa');
 letters2('papel');
 letters2('estuche');
+
+
 
 /* - Crea una función que reciba 2 verbos. La función debe imprimir a qué conjugación pertenecen. Por ejemplo, si la función recibe "andar" y "correr" debe imprimir "El verbo andar es de la primera conjugación y el verbo correr de la segunda conjugación". */
 
@@ -152,6 +55,8 @@ twoVerbs('estudiar', 'leer');
 twoVerbs('beber', 'comer');
 twoVerbs('ver', 'vivir');
 twoVerbs('escribir', 'abrir');
+
+
 
 /* Resolución en clase */
 
@@ -194,6 +99,8 @@ getConjugations('estudiar', 'leer');
 getConjugations('beber', 'comer');
 getConjugations('ver', 'vivir');
 getConjugations('escribir', 'abrir'); */
+
+
 
 /* - Crear una función llamada generateWord que reciba 3 palabras y genere una palabra usando 2 letras de cada palabra. Por ejemplo, "Hola", "Adios" y "Mano" podrían generar "aldona". */
 
@@ -248,6 +155,8 @@ const generateWord = (wordA, wordB, wordC) => {
 
 generateWord('Hola', 'Adiós', 'Mano');
 
+
+
 /* - Crea una función que reciba un email e imprima por separado el nombre y el dominio. Por ejemplo, si recibe "dorian@gmail.com" deberá imprimir "El usuario es dorian" y por otro lado "El dominio es gmail.com". */
 
 /* const indexAt = at => {
@@ -261,6 +170,8 @@ const indexDomain = domain => {
 };
  */
 
+/* Resolución en clase */
+
 const getNameAndDomain = email => {
   const atPosition = email.indexOf('@');
   const name = email.substring(0, atPosition);
@@ -270,6 +181,8 @@ const getNameAndDomain = email => {
 
 getNameAndDomain('hola@trazos.net');
 
+
+
 /* - Crea una función que reciba una palabra e imprime por consola una letra aleatoria de esa palabra. */
 
 /* const printLetter = wordF => {
@@ -278,6 +191,8 @@ getNameAndDomain('hola@trazos.net');
 
 printLetter('teclado'); */
 
+/* Resolución en clase */
+
 const getRandomLetter = word => {
   const randomNumber = Math.floor(Math.random() * word.length);
   const randomLetter = word.charAt(randomNumber);
@@ -285,6 +200,8 @@ const getRandomLetter = word => {
 };
 
 getRandomLetter('Ordenador');
+
+
 
 /* - Crea una función que reciba una palabra de 5 letras y la devuelva intercalando mayúsculas y minúsculas, por ejemplo adios, sería aDiOs */
 
@@ -297,6 +214,8 @@ getRandomLetter('Ordenador');
 
 upperLowerCase('piano'); */
 
+/* Resolución en clase */
+
 const intercalateLetters = word => {
   console.log(
     word.charAt(0).toLowerCase() +
@@ -308,6 +227,8 @@ const intercalateLetters = word => {
 };
 
 intercalateLetters('Adiós');
+
+
 
 /* - Crea una función que reciba un nombre y un apellido, y devuelva un nombre de usuario compuesto por la primera letra del nombre, el apellido completo, y un número aleatorio del 1 al 100. Por ejemplo, "Juan Perez" podría convertirse en "JPerez87". */
 
@@ -327,6 +248,8 @@ const generateUserName = (name, surname) => {
 
 generateUserName('Juan', 'Pérez');
 
+
+
 /* EJERCICIOS 4 JUNIO 2024 */
 
 /* Crea una función que reciba una palabra cualquiera e imprima la palabra con la primera y la última letra en mayúsculas */
@@ -340,6 +263,8 @@ const firstLastLetterUpperCase = word => {
 };
 
 firstLastLetterUpperCase('ordenador');
+
+
 
 /* Ahora haz que la letra del medio sea también una mayúscula */
 
@@ -359,18 +284,9 @@ const firstMiddleLastLetterUpperCase = word => {
 
 firstMiddleLastLetterUpperCase('ordenador');
 
-/* TEORÍA 4 JUNIO 2024 */
 
-//esto va a salir en minúsculas. No se modifica la cadena original
-const word = 'hola';
-word.toUpperCase();
-console.log(word);
 
-//esto sale en mayúsculas
-const wordTwo = 'hola';
-console.log(wordTwo.toUpperCase());
-
-/* Función que recibe dos palabras y las devuelve unidas por un guión */
+/* Crea una función que recibe dos palabras y las devuelve unidas por un guión */
 
 const wordHyphenWord = (wordM, wordN) => {
   console.log(wordM + '-' + wordN);
@@ -378,9 +294,11 @@ const wordHyphenWord = (wordM, wordN) => {
 
 wordHyphenWord('clase', 'silla');
 
-/* Función que recibe una palabra de 5 letras y te dice cuántas vocales tiene */
 
-const howManyVowels = word => {
+
+/* Crea una función que recibe una palabra de 5 letras y te dice cuántas vocales tiene */
+
+/* const howManyVowels = word => {
   if (word.length !== 5) {
     console.log('Esta palabra no tiene 5 letras');
     return;
@@ -396,7 +314,7 @@ const vowel5 = 'u';
 if (word.includes(vowel1, vowel2, vowel3, vowel4, vowel5)) {
 }
 
-howManyVowels('cesta');
+howManyVowels('cesta'); */
 
 /* Resolución en clase versión larga */
 
@@ -439,8 +357,9 @@ const countVowels = word => {
   console.log(`La palabra ${word} tiene ${vowelsCounter} vocales`);
 };
 
-
 countVowels('Adiós');
+
+
 
 /* Función que recibe una palabra de 5 letras y la imprime al revés. Ejemplo: Adios sería soiaD */
 
@@ -453,6 +372,8 @@ const wordBackwards = word => {
 };
 
 wordBackwards('móvil');
+
+
 
 /* Crea una función llamada sumDigits que tome un número de 3 cifras como parámetro y devuelva la suma de sus dígitos. Para el número 123 el resultado debería ser 6 */
 
