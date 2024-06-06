@@ -52,10 +52,22 @@ containsNumber([0, 2, 4, 7, 10]);
 
 //mejor utilizar if y else para devolver true o false.
 
+/* Resolución en clase */
 
-/* if (numbers.includes(randomNumber)) {
-  console.log(`El número ${randomNumber} está en la posición ${numbers.indexOf(randomNumber)}`)
-} */
+const arrayIncludeRandomNumber = numbers => {
+  const randomNumber = Math.floor(Math.random() * 11);
+
+  if (numbers.includes(randomNumber)) {
+    console.log(`El número ${randomNumber} está en la posición ${numbers.indexOf(randomNumber)}`);
+  } else {
+    console.log(`El número ${randomNumber} no está en el array`);
+  }
+};
+
+arrayIncludeRandomNumber([1, 2, 3, 4, 5]);
+
+
+
 
 /* - Crea una función que reciba un array vacío y lo devuelva con 3 números aleatorios entre 0 y 100. */
 
@@ -70,19 +82,24 @@ const threeRandomNumbers = numbers => {
 
 threeRandomNumbers([]);
 
+/* Resolución en clase */
 
-/* const fillEmptyArray = emptyArray => {
-  const randomNumber
+const fillEmptyArray = emptyArray => {
+  const randomNumberA = Math.floor(Math.random() * 101);
+  const randomNumberB = Math.floor(Math.random() * 101);
+  const randomNumberC = Math.floor(Math.random() * 101);
 
-
-  console.log(emptyArray);
+  emptyArray.push(randomNumberA, randomNumberB, randomNumberC);
 
   return emptyArray;
-}
+};
 
-fillEmptyArray([]) */
+fillEmptyArray([]);
 
-console.clear(); //esto es para limpiar la consola y que muestre solo lo de abajo
+console.clear(); //esto es para limpiar la consola y que muestre solo lo de después
+
+
+
 
 /* - Crea una función que reciba un array de 5 números. Dentro de esa función crea dos arrays vacíos llamados even (pares) y odd (impares), después multiplica cada uno de los números del array recibido por un número aleatorio entre 1 y 10, si el resultado es par, guárdalo en el array de pares, si es impar, en el array de impares, al final, imprime los 3 arrays por consola. */
 
@@ -107,9 +124,6 @@ const threeEvenOdd = numbers => {
 
 threeEvenOdd([1, 2, 3, 4, 5]);
 
-
-
-
 //numbers % 2 === 0
 
 /*   numbers[0] * Math.ceil(Math.random() * randomNumber110),
@@ -117,6 +131,58 @@ threeEvenOdd([1, 2, 3, 4, 5]);
     numbers[2] * Math.ceil(Math.random() * randomNumber110),
     numbers[3] * Math.ceil(Math.random() * randomNumber110),
     numbers[4] * Math.ceil(Math.random() * randomNumber110); */
+
+/* Resolución en clase */
+
+const evenOrOdd = numbers => {
+  const even = [];
+  const odd = [];
+
+  const randomNumber = Math.floor(Math.random() * 11);
+
+  const resultA = numbers[0] * randomNumber;
+  const resultB = numbers[1] * randomNumber;
+  const resultC = numbers[2] * randomNumber;
+  const resultD = numbers[3] * randomNumber;
+  const resultE = numbers[4] * randomNumber;
+
+  if (resultA % 2 === 0) {
+    even.push(resultA);
+  } else {
+    odd.push(resultA);
+  }
+
+  if (resultB % 2 === 0) {
+    even.push(resultB);
+  } else {
+    odd.push(resultB);
+  }
+
+  if (resultC % 2 === 0) {
+    even.push(resultC);
+  } else {
+    odd.push(resultC);
+  }
+
+  if (resultD % 2 === 0) {
+    even.push(resultD);
+  } else {
+    odd.push(resultD);
+  }
+
+  if (resultE % 2 === 0) {
+    even.push(resultE);
+  } else {
+    odd.push(resultE);
+  }
+
+  console.log(numbers);
+  console.log(even);
+  console.log(odd);
+};
+
+evenOrOdd([1, 2, 3, 4, 5]);
+
 
 
 
@@ -157,11 +223,9 @@ const dniLetter = number => {
 
 dniLetter(63822549);
 
+/* Resolución en clase forma simplificada */
 
-
-/* Forma simplificada */
-
-/* const dniLetter = number => {
+/* const dniLetter = dni => {
   const letter = [
     'T',
     'R',
@@ -188,11 +252,14 @@ dniLetter(63822549);
     'E'
   ];
 
-  const positionLetter = number % 23;
-  console.log(number + letter[positionLetter]);
+  const positionLetter = dni % 23;
+  console.log(dni + letter[positionLetter]);
 };
 
   dniLetter(63822549); */
+
+
+
 
 /* - Crea una función que reciba un array con 3 palabras, debes imprimir por consola un array que contenga la inicial y la última letra de cada palabra en mayúsculas, es decir, si nuestra función recibiera un array con ['hola', 'adios', 'gato'] deberá imprimir por consola ['H', 'A', 'A', 'S', 'G', 'O'] */
 
@@ -236,19 +303,24 @@ const initialLastUpperCase = words => {
 
 initialLastUpperCase(['hola', 'adios', 'gato']);
 
-
 /* Forma simplificada */
 
 const firstAndLastLetterInUpperCase = words => {
-  const firstLetterA = words [0].charAt(0).toUpperCase();
-  const lastLetterA = words [0].charAt(words[0].length -1).toUpperCase();
-  //seguir con todas
+  const firstLetterA = words[0].charAt(0).toUpperCase();
+  const lastLetterA = words[0].charAt(words[0].length - 1).toUpperCase();
+  const firstLetterB = words[1].charAt(0).toUpperCase();
+  const lastLetterB = words[1].charAt(words[1].length - 1).toUpperCase();
+  const firstLetterC = words[2].charAt(0).toUpperCase();
+  const lastLetterC = words[2].charAt(words[2].length - 1).toUpperCase();
 
   const letters = [];
-  letters.push(firstLetterA, lastLetterA)
+  letters.push(firstLetterA, lastLetterA, firstLetterB, lastLetterB, firstLetterC, lastLetterC);
+  console.log(letters);
 };
 
 firstAndLastLetterInUpperCase(['hola', 'adios', 'gato']);
+
+
 
 
 /* Ejercicio clase operador ternario */
@@ -268,7 +340,3 @@ returnExample(4, 9); */
 const returnExample = (a, b) => a > b;
 
 returnExample(4, 9);
-
-
-
-
