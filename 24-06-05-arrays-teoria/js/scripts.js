@@ -24,6 +24,12 @@ letters.pop();
 console.log(letters); */
 
 //push mete datos al final
+/* El método push en JavaScript agrega uno o más elementos al final de un array y devuelve la nueva longitud del array. No devuelve el elemento que se agregó. */
+let array = [];
+let newLength = array.push(10);
+console.log(newLength); // Imprime 1, porque ahora el array tiene 1 elemento
+console.log(array); // Imprime [10], que es el contenido del array
+
 /* const letters = ['a', 'b', 'c'];
 console.log(letters);
 letters.push('d', 'e');

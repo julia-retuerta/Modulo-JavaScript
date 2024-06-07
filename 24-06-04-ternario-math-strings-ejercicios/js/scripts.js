@@ -14,8 +14,6 @@ letters('mesa');
 letters('papel');
 letters('estuche');
 
-
-
 /* - Repite el ejercicio anterior pero con un operador ternario. */
 
 const letters2 = wordA => {
@@ -25,8 +23,6 @@ const letters2 = wordA => {
 letters2('mesa');
 letters2('papel');
 letters2('estuche');
-
-
 
 /* - Crea una función que reciba 2 verbos. La función debe imprimir a qué conjugación pertenecen. Por ejemplo, si la función recibe "andar" y "correr" debe imprimir "El verbo andar es de la primera conjugación y el verbo correr de la segunda conjugación". */
 
@@ -55,8 +51,6 @@ twoVerbs('estudiar', 'leer');
 twoVerbs('beber', 'comer');
 twoVerbs('ver', 'vivir');
 twoVerbs('escribir', 'abrir');
-
-
 
 /* Resolución en clase */
 
@@ -99,8 +93,6 @@ getConjugations('estudiar', 'leer');
 getConjugations('beber', 'comer');
 getConjugations('ver', 'vivir');
 getConjugations('escribir', 'abrir'); */
-
-
 
 /* - Crear una función llamada generateWord que reciba 3 palabras y genere una palabra usando 2 letras de cada palabra. Por ejemplo, "Hola", "Adios" y "Mano" podrían generar "aldona". */
 
@@ -155,8 +147,6 @@ const generateWord = (wordA, wordB, wordC) => {
 
 generateWord('Hola', 'Adiós', 'Mano');
 
-
-
 /* - Crea una función que reciba un email e imprima por separado el nombre y el dominio. Por ejemplo, si recibe "dorian@gmail.com" deberá imprimir "El usuario es dorian" y por otro lado "El dominio es gmail.com". */
 
 /* const indexAt = at => {
@@ -181,8 +171,6 @@ const getNameAndDomain = email => {
 
 getNameAndDomain('hola@trazos.net');
 
-
-
 /* - Crea una función que reciba una palabra e imprime por consola una letra aleatoria de esa palabra. */
 
 /* const printLetter = wordF => {
@@ -200,8 +188,6 @@ const getRandomLetter = word => {
 };
 
 getRandomLetter('Ordenador');
-
-
 
 /* - Crea una función que reciba una palabra de 5 letras y la devuelva intercalando mayúsculas y minúsculas, por ejemplo adios, sería aDiOs */
 
@@ -228,8 +214,6 @@ const intercalateLetters = word => {
 
 intercalateLetters('Adiós');
 
-
-
 /* - Crea una función que reciba un nombre y un apellido, y devuelva un nombre de usuario compuesto por la primera letra del nombre, el apellido completo, y un número aleatorio del 1 al 100. Por ejemplo, "Juan Perez" podría convertirse en "JPerez87". */
 
 /* const userName = (name, surname) => {
@@ -248,8 +232,6 @@ const generateUserName = (name, surname) => {
 
 generateUserName('Juan', 'Pérez');
 
-
-
 /* EJERCICIOS 4 JUNIO 2024 */
 
 /* Crea una función que reciba una palabra cualquiera e imprima la palabra con la primera y la última letra en mayúsculas */
@@ -263,8 +245,6 @@ const firstLastLetterUpperCase = word => {
 };
 
 firstLastLetterUpperCase('ordenador');
-
-
 
 /* Ahora haz que la letra del medio sea también una mayúscula */
 
@@ -284,8 +264,6 @@ const firstMiddleLastLetterUpperCase = word => {
 
 firstMiddleLastLetterUpperCase('ordenador');
 
-
-
 /* Crea una función que recibe dos palabras y las devuelve unidas por un guión */
 
 const wordHyphenWord = (wordM, wordN) => {
@@ -293,8 +271,6 @@ const wordHyphenWord = (wordM, wordN) => {
 };
 
 wordHyphenWord('clase', 'silla');
-
-
 
 /* Crea una función que recibe una palabra de 5 letras y te dice cuántas vocales tiene */
 
@@ -359,8 +335,6 @@ const countVowels = word => {
 
 countVowels('Adiós');
 
-
-
 /* Función que recibe una palabra de 5 letras y la imprime al revés. Ejemplo: Adios sería soiaD */
 
 const wordBackwards = word => {
@@ -372,8 +346,6 @@ const wordBackwards = word => {
 };
 
 wordBackwards('móvil');
-
-
 
 /* Crea una función llamada sumDigits que tome un número de 3 cifras como parámetro y devuelva la suma de sus dígitos. Para el número 123 el resultado debería ser 6 */
 

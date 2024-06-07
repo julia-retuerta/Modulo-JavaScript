@@ -195,7 +195,7 @@ const yearAge = (year, age) => {
 
   for (let counter = yearBorn + 1; counter <= year; counter++) {
     if (counter - yearBorn === 1) {
-      /*otra opción: counter === yearBorn + 1 */ console.log(
+      /*otra opción más intuitiva: counter === yearBorn + 1 */ console.log(
         `En el año ${counter} cumpliste ${counter - yearBorn} año`
       );
     } else {
@@ -223,20 +223,19 @@ evenNumbers(6, 14); */
 /* Versión cualquier número */
 
 const evenNumbers = (numberA, numberB) => {
-  
-if (numberA > numberB){
-      for (let counter = numberB; counter <= numberA; counter++){
-        if (counter % 2 === 0) {
-          console.log(counter);
-        }
-      }
-    } else{
-      for (let counter = numberA; counter <= numberB; counter++){
-        if (counter % 2 === 0) {
-          console.log(counter);
-        }
+  if (numberA > numberB) {
+    for (let counter = numberB; counter <= numberA; counter++) {
+      if (counter % 2 === 0) {
+        console.log(counter);
       }
     }
+  } else {
+    for (let counter = numberA; counter <= numberB; counter++) {
+      if (counter % 2 === 0) {
+        console.log(counter);
+      }
+    }
+  }
 };
 
 evenNumbers(60, 14);
@@ -285,9 +284,8 @@ evenNumbers(6, 14);
 /* - Crea una función que genere 2 arrays y los rellene con 5 números aleatorios cada uno, la función debe decir qué valores se han repetido en los dos arrays. */
 
 const repeatedNumbers = () => {
-let array1 = [];
-let array2 = [];
-
+  let array1 = [];
+  let array2 = [];
 };
 
 repeatedNumbers();
@@ -333,8 +331,8 @@ numberSquareCube([2, 4, 5, 8, 9, 13, 18, 24, 35, 56]);
 /* - Crea una función que reciba una palabra e imprima por consola esa palabra pero con las vocales en mayúscula. */
 
 const upperCaseVowels = word => {
-  for (let counter = 0; counter <= word.lentgh; counter++) {
-    const vowels = 'aeiouAEIOUáéíóú';
+  for (let counter = 0; counter <= word.length; counter++) {
+    const vowels = 'aeiouAEIOUáéíóúÁÉÍÓÚ';
     console.log(word);
   }
 };
