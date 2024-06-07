@@ -68,14 +68,20 @@ backwards(5);
 
 /* - Crea una función que reciba un array de 10 números e imprima por consola la suma de todos los valores del array. */
 
-const sum = numbers => {
-  for (let counter = numbers[0]; counter < numbers.length; counter++) {
-    console.log(counter);
+const sumNumbers = numbers => {
+  let total = 0; //esto es para almacenar la suma
+  /*  for (let counter = 0; counter < numbers.length; counter++) {
+    total = total + numbers[counter]
+  } */
+
+  for (const number of numbers) {
+    total = total + number;
   }
+
+  console.log(total);
 };
 
-sum([2, 3, 4, 5, 6, 7, 8, 9, 10, 12]);
-//almacenar la suma fuera
+sumNumbers([2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
 
 /* - Crea una función que reciba un número e imprima por consola la tabla de multiplicar del número que ha recibido hasta el 10. Para el 4 el resultado debe ser:
 
@@ -92,7 +98,11 @@ sum([2, 3, 4, 5, 6, 7, 8, 9, 10, 12]);
   4 x 10 = 40 */
 
 const multiply = number => {
-  for (let counter = 0; counter >= 0 && counter <= 10; counter++) {
+  for (
+    let counter = 0;
+    /*esto sobra porque ya está escrito en counter = 0: counter >= 0 && */ counter <= 10;
+    counter++
+  ) {
     console.log(`${number} x ${counter} = ${number * counter}`);
   }
 };
@@ -114,7 +124,11 @@ multiply(5);
   4 x 0 = 0 */
 
 const multiplyBackwards = number => {
-  for (let counter = 10; counter >= 0 && counter <= 10; counter--) {
+  for (
+    let counter = 10;
+    counter >= 0 /*esto sobra porque ya está escrito en counter = 10: && counter <= 10 */;
+    counter--
+  ) {
     console.log(`${number} x ${counter} = ${number * counter}`);
   }
 };
@@ -129,7 +143,7 @@ multiplyBackwards(5);
   - "En el año X cumpliste 3 años"
     ... */
 
-const yearAge = (numberA, numberB) => {
+/* const yearAge = (numberA, numberB) => {
   const yearBorn = numberA - numberB;
   console.log(`Naciste en el año ${yearBorn}`);
   for (let counteryear = yearBorn + 1; counteryear > yearBorn && counteryear <= numberA; counteryear++) {
@@ -141,27 +155,147 @@ const yearAge = (numberA, numberB) => {
   }
 };
 
+yearAge(2024, 26); */
+
+/* const yearAge = (year, age) => {
+  const yearBorn = year - age;
+  console.log(`Naciste en el año ${yearBorn}`);
+  for (let counter = yearBorn + 1; counter <= year; counter++) {
+    if (counter <= age){
+      console.log(`En el año ${yearBorn[counter]} cumpliste 1 año`);
+    }
+
+  }
+
+  for (let counterage = 0; counterage <= numberB; counterage++) {
+    console.log(`cumpliste ${counterage} años`);
+  }
+};
+
+yearAge(2024, 26); */
+
+/* enfoque con el año */
+
+/* const yearAge = (year, age) => {
+  const yearBorn = year - age;
+  console.log(`Naciste en el año ${yearBorn}`);
+
+  for (let counter = 1; counter <= age; counter++) {
+      console.log(`En el año ${yearBorn + counter} cumpliste ${counter} años`);
+  }
+};
+
+yearAge(2024, 26); */
+
+/* enfoque con la edad */
+
+const yearAge = (year, age) => {
+  const yearBorn = year - age;
+  console.log(`Naciste en el año ${yearBorn}`);
+
+  for (let counter = yearBorn + 1; counter <= year; counter++) {
+    if (counter - yearBorn === 1) {
+      /*otra opción: counter === yearBorn + 1 */ console.log(
+        `En el año ${counter} cumpliste ${counter - yearBorn} año`
+      );
+    } else {
+      console.log(`En el año ${counter} cumpliste ${counter - yearBorn} años`);
+    }
+  }
+};
+
 yearAge(2024, 26);
 
 /* - Crea una función que reciba dos números e imprima todos los números pares desde el primero hasta el segundo. Si recibe 2 y 12 imprimirá 2, 4, 6, 8, 10, 12. */
 
-const evenNumbers = (numberA, numberB) => {
-  for (let counter = numberA; counter >= numberA && counter <= numberB; counter++) {
+/* Versión número menor a número mayor */
+
+/* const evenNumbers = (numberA, numberB) => {
+  for (let counter = numberA; counter <= numberB; counter++) {
     if (counter % 2 === 0) {
       console.log(counter);
     }
   }
 };
 
+evenNumbers(6, 14); */
+
+/* Versión cualquier número */
+
+const evenNumbers = (numberA, numberB) => {
+  
+if (numberA > numberB){
+      for (let counter = numberB; counter <= numberA; counter++){
+        if (counter % 2 === 0) {
+          console.log(counter);
+        }
+      }
+    } else{
+      for (let counter = numberA; counter <= numberB; counter++){
+        if (counter % 2 === 0) {
+          console.log(counter);
+        }
+      }
+    }
+};
+
+evenNumbers(60, 14);
 evenNumbers(6, 14);
 
+/* Corregido en clase */
+
+/* Forma larga */
+
+/* const evenNumbers = (numberA, numberB) => {
+  
+  if (numberA < numberB){
+        for (let counter = numberA; counter <= numberB; counter++){
+          if (counter % 2 === 0) {
+            console.log(counter);
+          }
+        }
+      } else{
+        for (let counter = numberB; counter <= numberA; counter++){
+          if (counter % 2 === 0) {
+            console.log(counter);
+          }
+        }
+      }
+  };
+  
+  evenNumbers(60, 14);
+  evenNumbers(6, 14); */
+
+/* Forma corta */
+
+/* const evenNumbers = (numberA, numberB) => {
+  const start = Math.min(numberA, numberB);
+  const end = Math.max(numberA, numberB);
+
+  for (let counter = start; counter <= end; counter++) {
+    if (counter % 2 === 0) {
+      console.log(counter);
+    }
+  }
+};
+
+evenNumbers(60, 14);
+evenNumbers(6, 14);
+ */
 /* - Crea una función que genere 2 arrays y los rellene con 5 números aleatorios cada uno, la función debe decir qué valores se han repetido en los dos arrays. */
 
-const repeatedNumbers = (array1, array2) => {};
+const repeatedNumbers = () => {
+let array1 = [];
+let array2 = [];
 
-repeatedNumbers([], []);
+};
+
+repeatedNumbers();
 
 /* - Crea una función que reciba un número y te diga si es primo o no. Un número primo es aquel que sólo puede dividirse por sí mismo */
+
+//los primos nunca son números pares
+//por ej: el número 13 hay que dividirlo 11 veces hasta saber si es primo
 
 /* const primeNumber = number => {
   for (let counter =) {
@@ -196,12 +330,10 @@ const numberSquareCube = numbers => {
 
 numberSquareCube([2, 4, 5, 8, 9, 13, 18, 24, 35, 56]);
 
-console.clear();
-
 /* - Crea una función que reciba una palabra e imprima por consola esa palabra pero con las vocales en mayúscula. */
 
 const upperCaseVowels = word => {
-  for (let counter = word[0]; counter <= word.lentgh; counter++) {
+  for (let counter = 0; counter <= word.lentgh; counter++) {
     const vowels = 'aeiouAEIOUáéíóú';
     console.log(word);
   }
@@ -215,3 +347,11 @@ upperCaseVowels('zapatillas');
   i: 1,
   o: 1,
   u: 1 */
+
+/* - Crea una función que reciba dos palabras e intercale las letras de cada una para formar una nueva palabra. Si la función recibe (hola, adios) el resultado será "haodliao", pero si recibe (adios, hola) el resultado será "ahdoiloa" */
+
+/*   const alternateLetters = (wordA, wordB) => {
+for (let counter = 0; )
+  }
+
+  alternateLetters('hola', 'adios') */
