@@ -90,7 +90,7 @@ console.log(data.fifthFloor.onlyEven);
 console.log(data.fifthFloor.onlyOdd);
 
 /* - Crea una función que reciba una frase, por ejemplo "Si no estudias acabarás como Victor", y rellena el objeto con los valores que te pide. Revisa la documentación de los strings si hay algo que no sabes obtener.
-https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String*/
+https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String */
 
 const data2 = {
   firstFloor: {
@@ -118,11 +118,15 @@ const data2 = {
 };
 
 const receivedPhrase = phrase => {
-  const vowels = 'aeiouAEIOUáéíóúÁÉÍÓÚ';
+  const allVowels = 'aeiouAEIOUáéíóúÁÉÍÓÚ';
+  const allConsonants = 'bcdfghjklmnñpqrstvwxyzBCDFGHJKLMNÑPQRSTVWXYZ';
+
   for (let counter = 0; counter < phrase.length; counter++) {
     let everyValueOfTheArray = phrase[counter];
-    if (vowels.includes(everyValueOfTheArray)) {
+    if (allVowels.includes(everyValueOfTheArray)) {
       data2.firstFloor.vowels.push(everyValueOfTheArray);
+    } else if (allConsonants.includes(everyValueOfTheArray)) {
+      data2.secondFloor.consonants.push(everyValueOfTheArray);
     }
   }
 };
@@ -130,3 +134,8 @@ const receivedPhrase = phrase => {
 receivedPhrase('Si no estudias, acabarás como Víctor');
 
 console.log(data2.firstFloor.vowels);
+console.log(data2.secondFloor.consonants);
+console.log(data2.fourthFloor.asciiCode);
+console.log(data2.fifthFloor.wordsInUppercase);
+console.log(data2.fifthFloor.wordsInLowercase);
+console.log(data2.sixthFloor.secretCode);

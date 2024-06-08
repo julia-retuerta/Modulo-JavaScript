@@ -41,6 +41,9 @@ for (let counter = 0; counter < numbers.length; counter++) {
   console.log(numbers[counter]);
 }
 
+//imprimir numbers[counter] saca cada uno de los valores del array uno debajo de otro. (Desde 1 hasta 8, en este caso)
+//imprimir counter saca todas las vueltas que da el bucle. (Desde 0 hasta 7, en este caso)
+
 //el código de arriba es el mismo que el de abajo
 //siempre const
 
@@ -281,11 +284,15 @@ evenNumbers(6, 14);
 evenNumbers(60, 14);
 evenNumbers(6, 14);
  */
+
 /* - Crea una función que genere 2 arrays y los rellene con 5 números aleatorios cada uno, la función debe decir qué valores se han repetido en los dos arrays. */
 
 const repeatedNumbers = () => {
   let array1 = [];
   let array2 = [];
+
+  array1 = Math.random() * 5;
+  console.log(array1);
 };
 
 repeatedNumbers();
@@ -295,16 +302,26 @@ repeatedNumbers();
 //los primos nunca son números pares
 //por ej: el número 13 hay que dividirlo 11 veces hasta saber si es primo
 
-/* const primeNumber = number => {
-  for (let counter =) {
-    console.log(`${number} es un número primo`);
+const primeNumber = number => {
+  if ((number % 2 === 0 && number !== 2) || number <= 1) {
+    console.log(`El número ${number} no es un número primo`);
+    return;
   }
-    //console.log(`${number} no es un número primo`);
 
+  for (let counter = 2; counter < number; counter++) {
+    if (number % counter === 0) {
+      console.log(`El número ${number} no es un número primo`);
+    } else {
+      console.log(`El número ${number} es un número primo`);
+    }
+  }
 };
 
 primeNumber(13);
-primeNumber(4); */
+primeNumber(15);
+primeNumber(2);
+primeNumber(4);
+primeNumber(1);
 
 /* - Crea una función que reciba un array de 10 números, imprime por consola cada número, su cuadrado y su cubo en este formato:
   "Número: 2 - Cuadrado: 4 - Cubo: 8".
@@ -331,9 +348,13 @@ numberSquareCube([2, 4, 5, 8, 9, 13, 18, 24, 35, 56]);
 /* - Crea una función que reciba una palabra e imprima por consola esa palabra pero con las vocales en mayúscula. */
 
 const upperCaseVowels = word => {
-  for (let counter = 0; counter <= word.length; counter++) {
-    const vowels = 'aeiouAEIOUáéíóúÁÉÍÓÚ';
-    console.log(word);
+  const vowels = 'aeiouAEIOUáéíóúÁÉÍÓÚ';
+  const resultVowelsInUpperCase = '';
+  
+  for (let counter = 0; counter < word.length; counter++) {
+    if (vowels.includes(word[counter])) {
+      console.log(word[counter].toUpperCase());
+    }
   }
 };
 
@@ -346,10 +367,80 @@ upperCaseVowels('zapatillas');
   o: 1,
   u: 1 */
 
+const repeatedVowels = phrase => {
+  const vowels = 'aeiouAEIOUáéíóúÁÉÍÓÚ';
+};
+
+repeatedVowels('Enrique ordeña cabras');
+
 /* - Crea una función que reciba dos palabras e intercale las letras de cada una para formar una nueva palabra. Si la función recibe (hola, adios) el resultado será "haodliao", pero si recibe (adios, hola) el resultado será "ahdoiloa" */
 
-/*   const alternateLetters = (wordA, wordB) => {
-for (let counter = 0; )
+const alternateLetters = (wordA, wordB) => {
+  /* for (let counter = 0; ) */
+};
+
+alternateLetters('hola', 'adios');
+
+/* - Crea una función que reciba una palabra e imprima la misma palabra en orden inverso conservando las mayúsculas y las minúsculas. Si recibe "Mariposas" deberá imprimir "sasopiraM" */
+
+const reverseWord = word => {
+  for (let counter = word.length - 1; counter >= 0; counter--) {
+    console.log(word[counter]);
+  }
+};
+
+reverseWord('Mariposas');
+
+/* - Crea una función que reciba un array de 10 números. Dentro de esa función crea dos arrays vacíos llamados even (pares) y odd (impares), después multiplica cada uno de los números del array recibido por un número aleatorio entre 1 y 10, si el resultado es par, guárdalo en el array de pares, si es impar, en el array de impares, al final, imprime los 3 arrays por consola. */
+
+const evenOrOdd = numbers => {
+  const even = [];
+  const odd = [];
+
+  for (let counter = 0; counter < numbers.length; counter++) {
+    const randomNumber110 = Math.floor(Math.random() * 11);
+
+    const result = numbers[counter] * randomNumber110;
+    if (result % 2 === 0) {
+      even.push(result);
+    } else {
+      odd.push(result);
+    }
   }
 
-  alternateLetters('hola', 'adios') */
+  console.log(numbers);
+  console.log(even);
+  console.log(odd);
+};
+
+evenOrOdd([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+/* - Crea una función que reciba un array con 5 palabras, debes imprimir por consola un array que contenga la inicial y la última letra de cada palabra en mayúsculas, es decir, si nuestra función recibiera un array con ['hola', 'adios', 'gato', 'perro', 'casa'] deberá imprimir por consola ['H', 'A', 'A', 'S', 'G', 'O', 'P','O', 'C', 'A'] */
+
+const firstAndLastLetterInUpperCase = words => {
+  const letters = [];
+
+  for (let counter = 0; counter < words.length; counter++) {
+    const firstLetter = words[counter].charAt(0).toUpperCase();
+    const lastLetter = words[counter].charAt(words[counter].length - 1).toUpperCase();
+    letters.push(firstLetter, lastLetter);
+  }
+  console.log(letters);
+};
+
+firstAndLastLetterInUpperCase(['hola', 'adios', 'gato', 'perro', 'casa']);
+
+/* const firstAndLastLetterInUpperCase = words => {
+  const firstLetterA = words[0].charAt(0).toUpperCase();
+  const lastLetterA = words[0].charAt(words[0].length - 1).toUpperCase();
+  const firstLetterB = words[1].charAt(0).toUpperCase();
+  const lastLetterB = words[1].charAt(words[1].length - 1).toUpperCase();
+  const firstLetterC = words[2].charAt(0).toUpperCase();
+  const lastLetterC = words[2].charAt(words[2].length - 1).toUpperCase();
+
+  const letters = [];
+  letters.push(firstLetterA, lastLetterA, firstLetterB, lastLetterB, firstLetterC, lastLetterC);
+  console.log(letters);
+};
+
+firstAndLastLetterInUpperCase(['hola', 'adios', 'gato']); */
