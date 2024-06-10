@@ -69,6 +69,24 @@ const data = {
   }
 };
 
+/* Bucle for */
+
+/* for (let counter = 0; counter < data.numbers.length; counter++) {
+  let everyValueOfTheArray = data.numbers[counter];
+  //console.log(everyValueOfTheArray);
+
+  data.firstFloor.secondFloor.numbersPlus2.push(everyValueOfTheArray + 2);
+  data.firstFloor.thirdFloor.numbersDouble.push(everyValueOfTheArray * 2);
+  data.fourthFloor.numbersDividedBy2.push(everyValueOfTheArray / 2);
+  if (everyValueOfTheArray % 2 === 0) {
+    data.fifthFloor.onlyEven.push(everyValueOfTheArray);
+  } else {
+    data.fifthFloor.onlyOdd.push(everyValueOfTheArray);
+  }
+} */
+
+/* Bucle for of */
+
 for (let counter = 0; counter < data.numbers.length; counter++) {
   let everyValueOfTheArray = data.numbers[counter];
   //console.log(everyValueOfTheArray);
@@ -117,7 +135,7 @@ const data2 = {
   }
 };
 
-const receivedPhrase = phrase => {
+/* const receivedPhrase = phrase => {
   const allVowels = 'aeiouAEIOUáéíóúÁÉÍÓÚ';
   const allConsonants = 'bcdfghjklmnñpqrstvwxyzBCDFGHJKLMNÑPQRSTVWXYZ';
 
@@ -127,8 +145,71 @@ const receivedPhrase = phrase => {
       data2.firstFloor.vowels.push(everyValueOfTheArray);
     } else if (allConsonants.includes(everyValueOfTheArray)) {
       data2.secondFloor.consonants.push(everyValueOfTheArray);
+    } else if (phrase.charCodeAt()) {
+      data2.fourthFloor.asciiCode;
     }
   }
+};
+
+receivedPhrase('Si no estudias, acabarás como Víctor');
+
+console.log(data2.firstFloor.vowels);
+console.log(data2.secondFloor.consonants);
+console.log(data2.fourthFloor.asciiCode);
+console.log(data2.fifthFloor.wordsInUppercase);
+console.log(data2.fifthFloor.wordsInLowercase);
+console.log(data2.sixthFloor.secretCode);
+ */
+
+const receivedPhrase = phrase => {
+  const allVowels = 'aeiouAEIOUáéíóúÁÉÍÓÚ';
+  const allConsonants = 'bcdfghjklmnñpqrstvwxyzBCDFGHJKLMNÑPQRSTVWXYZ';
+  const alphabet = 'bcdfghjklmnñpqrstvwxyzBCDFGHJKLMNÑPQRSTVWXYZ';
+
+  for (const letter of phrase) {
+    if (allVowels.includes(letter)) {
+      data2.firstFloor.vowels.push(letter);
+    } else if (allConsonants.includes(letter)) {
+      data2.secondFloor.consonants.push(letter);
+    }
+
+    data2.fourthFloor.asciiCode.push(letter.charCodeAt());
+
+    data2.fifthFloor.wordsInUppercase = phrase.toUpperCase().split('');
+    data2.fifthFloor.wordsInLowercase = phrase.toLowerCase().split('');
+  }
+
+  let secretCode = '';
+
+  for (const letter of phrase.toLowerCase()) {
+    if (letter === 'a' || letter === 'á') {
+      secretCode += 1;
+    } else if (letter === 'e' || letter === 'é') {
+      secretCode += 2;
+    } else if (letter === 'i' || letter === 'í') {
+      secretCode += 3;
+    } else if (letter === 'o' || letter === 'ó') {
+      secretCode += 4;
+    } else if (letter === 'u' || letter === 'ú') {
+      secretCode += 5;
+    } else if (allConsonants.includes(letter)) {
+      if (letter === 'b') {
+        secretCode += 'z';
+      } else {
+        const position = allConsonants.indexOf(letter) - 1;
+        secretCode += allConsonants.charAt(position);
+      }
+    } else if (letter === '') {
+      const randomPosition = Math.floor(Math.random() * alphabet.length);
+      secretCode += alphabet.charAt(randomPosition);
+    } else {
+      secretCode += letter;
+    }
+  }
+
+  console.log(secretCode);
+
+  data2.secretCode = secretCode;
 };
 
 receivedPhrase('Si no estudias, acabarás como Víctor');
