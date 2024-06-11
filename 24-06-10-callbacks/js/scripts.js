@@ -163,6 +163,9 @@ console.log(total);
 /* const total = numbers.reduce((total, number) => total * number, 1);
 console.log(total); */
 
+//
+//
+
 /* EJERCICIOS ARRAYS MÉTODOS CALLBACK */
 
 /* Crea una función que reciba un array de números y muestre por consola cada número multiplicado por su índice en el array */
@@ -173,7 +176,7 @@ const multipliedByIndex = numbers => {
   });
 };
 
-multipliedByIndex([2, 1, 3, 6, 5, 4]);
+multipliedByIndex([2, 1, 3, 6, 5, 7]);
 
 /* Crea una función que reciba un array de números y devuelva un array con cada número dividido por su índice en el array más 2, es decir index + 2 */
 
@@ -195,17 +198,20 @@ wordsToUpperCase(['pantalla', 'ordenador', 'mesa']);
 
 /* Crea una función que reciba un array de palabras y una letra. La función devolverá un array con las palabras que comiencen por esa letra, si no hay mostrará un mensaje por consola diciendo que ninguna palabra coincide. */
 
-const words = ['casa', 'coche', 'ventana'];
+/* const words = ['casa', 'coche', 'ventana'];
 const letter = 'c';
 
-const startWithLetter = (words, letter) => {
+const startsWithLetter = (words, letter) => {
+  const result = words.filter(word => word.startsWith(letter));
+
   if (words.startsWith(letter)) {
-    const result = words.filter(word => word.startsWith(letter));
     console.log(result);
   } else {
     console.log('Ninguna palabra empieza por esa letra');
   }
 };
+
+startsWithLetter(words, letter); */
 
 /* Añade a la función anterior lo necesario para que funcione independientemente de mayúsculas o minúsculas. */
 
@@ -217,8 +223,6 @@ const sum = numbers => {
 };
 
 sum([3, 1, 7, 6, 2, 4, 5, 9, 1, 6]);
-
-console.clear();
 
 /* Crea una función que reciba un array de 10 números, imprime por consola cada número, su cuadrado y su cubo en este formato:
   "Número: 2 - Cuadrado: 4 - Cubo: 8". */
@@ -252,10 +256,162 @@ const evenOrOdd = numbers => {
 
   const randomNumber = Math.floor(Math.random() * 11);
 
-  const result = numbers.map(number => number * randomNumber);
+  const result = numbers.forEach(number => number * randomNumber);
+
+  if (result % 2 === 0) {
+    even.push(result);
+  } else {
+    odd.push(result);
+  }
+
   console.log(numbers);
   console.log(even);
   console.log(odd);
 };
 
 evenOrOdd([3, 1, 7, 6, 2, 4, 5, 9, 8, 10]);
+
+/* Crea una función que reciba un array con 5 palabras, debes imprimir por consola un array que contenga la inicial y la última letra de cada palabra en mayúsculas, es decir, si nuestra función recibiera un array con ['hola', 'adios', 'gato', 'perro', 'casa'] deberá imprimir por consola ['H', 'A', 'A', 'S', 'G', 'O', 'P','O', 'C', 'A']. Si te quedas atascado puedes investigar la función flatMap() y flat() */
+
+/* const firstAndLastLetterInUpperCase = words => {
+  const result = words.flatMap(word => {
+    const firstLetter = word.charAt(0).toUpperCase();
+    const lastLetter = word.charAt(word.length - 1).toUpperCase();
+    result.push(firstLetter, lastLetter);
+  });
+
+  console.log(result);
+};
+
+firstAndLastLetterInUpperCase(['hola', 'adios', 'gato', 'perro', 'casa']); */
+
+console.clear();
+
+/* Crea una función que reciba un array de 10 números y te diga si alguno es mayor de 5. */
+
+const higherThan5 = numbers => {
+  numbers.forEach(number => {
+    if (number > 5) {
+      console.log(`El número ${number} es mayor de 5`);
+    } else if (number === 5) {
+      console.log(`El número ${number} es 5`);
+    } else {
+      console.log(`El número ${number} es menor de 5`);
+    }
+  });
+};
+
+higherThan5([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+/* Crea una función que reciba un array de 5 palabras y un número y te devuelva un array con las palabras que tienen esa longitud, por ejemplo si le envias (['hola', 'adios', 'gato', 'perro', 'casa'], 4), te devolverá un array con ['hola', 'gato', 'casa'] */
+
+const wordsWithLength = (words, length) => {
+  const result = words.filter(word => word.length === length);
+  console.log(result);
+};
+
+wordsWithLength(['hola', 'adios', 'gato', 'perro', 'casa'], 4);
+
+/* Crea una función que reciba un array de números y un número y te devuelva un array con los números que sean divisores de ese número */
+
+const array = [1, 2, 3, 4, 5];
+const divisor = 2;
+
+const divisorNumbers = (array, divisor) => {
+  const result = array.filter(number => number % divisor === 0);
+  console.log(result);
+};
+
+divisorNumbers(array, divisor);
+
+/* Crea una función que reciba este array y te devuelva sólo los usuarios cuya edad sea menor de 30. */
+
+const array2 = [
+  { name: 'John', age: 25 },
+  { name: 'Jane', age: 30 },
+  { name: 'Bob', age: 20 }
+];
+
+const under30 = array2 => {
+  const result = array2.filter(age => age < 30);
+  console.log(result);
+};
+
+under30(array2);
+
+/* Crea una función que reciba un array relleno con números y te diga si todos son pares o no. */
+
+const allEvenOrNot = numbers => {
+  const result = numbers.every(number => number % 2 === 0);
+  console.log(result);
+};
+
+allEvenOrNot([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+allEvenOrNot([2, 4, 6, 8, 10]);
+
+/* Crea una función que reciba un array de 5 palabras y las ordene en base a su longitud, de menor a mayor. */
+
+const shortestToLongest = words => {
+  const result = words.sort((a, b) => a.length - b.length);
+
+  console.log(result);
+};
+
+shortestToLongest(['vaso', 'monedero', 'lápiz', 'papel', 'rotulador']);
+
+/* Crea una función que reciba una palabra e imprima la misma palabra en orden inverso conservando las mayúsculas y las minúsculas. Si recibe "Mariposas" deberá imprimir "sasopiraM". No se puede usar reverse() 😊 (investiga la función reduceRight) */
+
+const reverseWord = word => {
+  const result = word.split('').reduceRight((acc, letter) => acc + letter);
+  console.log(result);
+};
+
+reverseWord('Mariposas');
+
+/* Crea una función que reciba un array de 5 números de 2 dígitos. La función debe ser capaz de sumar los dígitos de cada número, es decir si yo le envío [21, 34, 87, 10, 28] la función tendrá que ser capaz de devolverme un array con [3, 7, 15, 1, 10] */
+
+/* const sumDigits = numbers => {
+  const result = numbers.map => 
+  console.log(result);
+};
+
+sumDigits([3, 7, 15, 1, 10]); */
+
+/* Utilizando el array que te dejo a continuación resuelve estos dos retos.
+
+  - Crea una función que reciba un criterio de ordenación y ordene el array en base a ese criterio. Puede ser el nombre, el apellido o la edad.
+
+  - Crea una función que reciba un id de usuario y borre ese usuario del array.*/
+
+const users = [
+  {
+    id: 'user001',
+    name: 'Juan',
+    surname: 'Pérez',
+    age: 30
+  },
+  {
+    id: 'user002',
+    name: 'María',
+    surname: 'González',
+    age: 25
+  },
+  {
+    id: 'user003',
+    name: 'Pedro',
+    surname: 'Sánchez',
+    age: 35
+  },
+  {
+    id: 'user004',
+    name: 'Ana',
+    surname: 'Martínez',
+    age: 28
+  },
+  {
+    id: 'user005',
+    name: 'Luis',
+    surname: 'López',
+    age: 40
+  }
+];

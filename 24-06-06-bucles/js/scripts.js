@@ -285,6 +285,8 @@ evenNumbers(60, 14);
 evenNumbers(6, 14);
  */
 
+console.clear();
+
 /* - Crea una función que genere 2 arrays y los rellene con 5 números aleatorios cada uno, la función debe decir qué valores se han repetido en los dos arrays. */
 
 const repeatedNumbers = () => {
@@ -299,13 +301,19 @@ const repeatedNumbers = () => {
     array2.push(randomNumberB);
   }
 
-  /*   for (const number of array2){
-console.log(number);
-  } */
+  // con for
 
-  for (let i = 0; i < array1.length; i++) {
+  /*   for (let i = 0; i < array1.length; i++) {
     const number = array2[i];
 
+    if (array1.includes(number)) {
+      console.log(`El número ${number} se repite`);
+    }
+  } */
+
+  // con for of
+
+  for (const number of array2) {
     if (array1.includes(number)) {
       console.log(`El número ${number} se repite`);
     }
@@ -389,6 +397,10 @@ numberSquareCube([2, 4, 5, 8, 9, 13, 18, 24, 35, 56]);
 };
 
 upperCaseVowels('zapatillas'); */
+
+
+
+
 
 /* - Crea una función que reciba una frase e imprima el número de veces que se repite cada vocal, por ejemplo para la frase "Enrique ordeña cabras", el resultado por consola debe ser:
   a: 3,
