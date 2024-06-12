@@ -1,0 +1,52 @@
+/* esto no se usa */
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+
+/* solo se utiliza el selector universal (asterisco) para poner box-sizing: border-box */
+/*  box-sizing: border-box se utiliza para que siempre quede todo dentro de la caja y nunca crezca hacia afuera */
+* {
+    box-sizing: border-box;
+}
+
+
+/* Buena práctica: utilizar solo clases, no mezclar id, clases, etiquetas... */
+
+/* div.box{
+    background-color: orange;
+} */
+
+/* div#box{
+    background-color: green;
+} */
+
+/* .box{
+    width: 200px;
+    height: 200px;
+    padding: 25px;
+    border: 10px solid purple;
+    background-color: red;
+} */
+
+/* #box {
+    background-color: steelblue;
+} */
+
+.box-small{
+    width: 100px;
+    height: 100px;
+}
+
+.box-green {
+    background-color: green;
+}
+
+
+.container > * {
+    width: 200px;
+    height: 200px;
+    padding: 25px;
+    border: 10px solid purple;
+    background-color: red;
+}
