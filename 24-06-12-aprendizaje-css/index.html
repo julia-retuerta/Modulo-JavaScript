@@ -1,25 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aprendizaje CSS</title>
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body>
-    <h1>Título</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi molestias cupiditate natus accusamus repellendus beatae quaerat, necessitatibus ipsam autem, consectetur dolores atque dolore omnis doloremque veniam ducimus ratione eveniet vitae!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi molestias cupiditate natus accusamus repellendus beatae quaerat, necessitatibus ipsam autem, consectetur dolores atque dolore omnis doloremque veniam ducimus ratione eveniet vitae!</p>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Blog</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
 
-    <div class="container">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-    </div>
+      <!-- Siempre que creemos un menú tiene que ser con esta estructura: header, main, footer. El main siempre tiene que estar, el header y el footer son opcionales -->
 
-    <div id= box class="box box-small box-green"></div>
+      <h1>Título</h1>
+      <!-- Solo puede existir un h1 en la página y en él va lo más importante. Solo un h1 en todas las páginas .html -->
+      <!-- Siempre que hay un h tienen que estar los h anteriores en la página. Por ejemplo: si queremos escribir un h3 tiene que haber un h1 y un h2 primero. Lo que se suelen usar son el h1, el h2 y el h3, el resto no se usan demasiado. Los h se usan jerárquicamente en orden de importancia del contenido, no se tienen que usar nunca para lograr un tamaño más grande del titular -->
 
-</body>
+      <!-- aside siempre va fuera del main -->
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi molestias cupiditate natus accusamus repellendus
+        beatae quaerat, necessitatibus ipsam autem, consectetur dolores atque dolore omnis doloremque veniam ducimus
+        ratione eveniet vitae!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi molestias cupiditate natus accusamus repellendus
+        beatae quaerat, necessitatibus ipsam autem, consectetur dolores atque dolore omnis doloremque veniam ducimus
+        ratione eveniet vitae!
+      </p>
+
+      <article>
+        <h2>Section 2</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex nobis deserunt, est sit dolorum placeat corrupti
+          eos debitis quidem neque, cumque unde fuga, ullam veniam amet consequatur minima soluta. Aut?
+        </p>
+      </article>
+
+      <!-- section envuelve contenido relacionado. Article representa contenido independiente, al leerlo te enteras del mensaje. Al leer un section tienes que leer más cosas. Por ejemplo: una noticia de un periódico sería un article -->
+
+      <!-- div en bloque -->
+      <!-- span en línea. span se usa para contenido pequeño tipo Nombre, Email... -->
+
+      <div class="container">
+        <div class="box">Caja 1</div>
+        <div class="box">Caja 2</div>
+      </div>
+
+      <!-- <div class="banner">
+        <h2>PIXAR: UP</h2>
+      </div> -->
+
+      <!-- <div id="box" class="box box-small box-green"></div> -->
+    </main>
+
+    <footer></footer>
+  </body>
 </html>

@@ -7,9 +7,8 @@
 /* solo se utiliza el selector universal (asterisco) para poner box-sizing: border-box */
 /*  box-sizing: border-box se utiliza para que siempre quede todo dentro de la caja y nunca crezca hacia afuera */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 
 /* Buena práctica: utilizar solo clases, no mezclar id, clases, etiquetas... */
 
@@ -21,19 +20,80 @@
     background-color: green;
 } */
 
+/* border-radius admite hasta 8 valores */
+/* border-radius: 50%. esto genera un círculo y 50% es lo máximo que admite, por encima de 50% no hace nada más */
+
 /* .box{
     width: 200px;
     height: 200px;
     padding: 25px;
-    border: 10px solid purple;
+    border: 2px solid purple;
+    border-radius: 20px 50px;
+    border-radius: 20px / 50px; 
+    border-radius: 50%;
     background-color: red;
+} */
+
+.body {
+  margin: 0;
+  background-color: #333;
+}
+
+.container {
+  height: 300px;
+  background-color: purple;
+}
+
+/* position: relative. Los elementos se quedan como están. Se mueve desde donde está */
+/* position: absolute. Hace que los elementos pierdan su espacio reservado y sus medidas. Se mueven respecto al body si no hay ningún padre, abuelo... que tenga position. Si se pone position absolute tanto en el padre como en el hijo, el padre pierde su ancho y se queda a 0px */
+/* position solo se usa cuando no se puede colocar el contenido de ninguna otra forma */
+
+.box {
+  position: relative;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+  background-color: orange;
+  margin-bottom: 1rem;
+}
+
+/* imagen con texto superpuesto: tiene que estar la img como background */
+
+/* .img {
+  max-width: 100%;
+  display: block;
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  background-image: url();
+  background-size: cover;
+  color: #fff;
+  font-size: 2rem;
+  isolation: isolate;
+}
+ */
+/* los after y before siempre necesitan content: ''; */
+
+/* .banner::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, black 0, transparent);
+  z-index: -1;
 } */
 
 /* #box {
     background-color: steelblue;
 } */
 
-.box-small{
+/* .box-small{
     width: 100px;
     height: 100px;
 }
@@ -49,4 +109,31 @@
     padding: 25px;
     border: 10px solid purple;
     background-color: red;
+} */
+
+/* solo hay un after y un before para cada elemento */
+
+/* COSAS IMPORTANTES QUE SABER PARA HACER LOS EJERCICIOS */
+
+.box {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: purple;
 }
+
+.box::after {
+  content: '';
+  position: absolute;
+  top: 150px;
+  left: 100px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: orange;
+  box-shadow: 10px 20px 10px 10px orangered, 10px 20px 10px 10px rgb(0 0 0 / 0.6);
+  box-shadow: inset 5px 5px 8px orangered;
+}
+
+/* box-shadow admite 6 valores: desplazamiento en x, desplazamiento en y, desenfoque (blur), expansión (spread), color */
+/* inset: sombras internas */
