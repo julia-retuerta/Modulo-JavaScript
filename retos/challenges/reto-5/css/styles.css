@@ -7,7 +7,24 @@ Colors:
 
 .box {
   background-color: #4893d2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .shape {
+  width: 100px;
+  height: 250px;
+  background-color: #063a86;
+}
+
+.shape::before {
+  content: '';
+  position: absolute;
+  top: -45px;
+  width: 100px;
+  height: 100px;
+  background-color: #4893d2;
+  rotate: 45deg;
+  box-shadow: 205px 205px #4893d2;
 }

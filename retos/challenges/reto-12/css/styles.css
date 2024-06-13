@@ -7,7 +7,36 @@ Colors:
 
 .box {
   background-color: #6592cf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .square {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background-color: #243d83;
+}
+
+.square::before {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 150px;
+  height: 150px;
+  background-color: #6592cf;
+  rotate: 15deg;
+}
+
+.square::after {
+  content: '';
+  position: absolute;
+  top: 88px;
+  left: 88px;
+  width: 75px;
+  height: 75px;
+  background-color: #243d83;
+  rotate: 30deg;
 }

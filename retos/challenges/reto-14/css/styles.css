@@ -9,7 +9,15 @@ Colors:
 
 .box {
   background-color: #191919;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #e08027;
+  box-shadow: 0 0 0 30px #824b20;
 }
