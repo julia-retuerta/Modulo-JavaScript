@@ -10,4 +10,18 @@ Colors:
 }
 
 .cloud {
+  position: absolute;
+  top: 115px;
+  left: 100px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #d86f45;
+  box-shadow: 80px -30px #d86f45;
+}
+
+.cloud::before {
+  width: 100px;
+  height: 100px;
+  background-color: #d86f45;
 }

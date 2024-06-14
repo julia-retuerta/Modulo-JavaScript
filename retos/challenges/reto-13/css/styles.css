@@ -12,7 +12,7 @@ Colors:
   justify-content: center;
 }
 
-.circle {
+/* .circle {
   width: 140px;
   height: 140px;
   border: 20px solid #eca03d;
@@ -35,4 +35,40 @@ Colors:
   height: 48px;
   background-color: #84271c;
   border-radius: 50%;
+} */
+
+/* border ocupa sitio y outline no. La ventaja de outline es que existe outline-offset. Con outline no se pueden elegir los bordes por separado */
+
+/* el after y el before pueden tener sombras, todos los elementos pueden tener sombras */
+
+.circle {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #84271c;
+  border-radius: 50%;
+  box-shadow: 0 0 0 25px #191210;
+  outline: 20px solid #eca03d;
+  outline-offset: 25px;
+}
+
+.circle::after,
+.circle::before {
+  content: '';
+  position: absolute;
+  top: -25px;
+  left: -125px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 20px solid #eca03d;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  rotate: 45deg;
+}
+
+.circle::before {
+  left: 75px;
+  rotate: -135deg;
 }

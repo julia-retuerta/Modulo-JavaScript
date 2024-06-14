@@ -113,6 +113,8 @@
 
 /* solo hay un after y un before para cada elemento */
 
+/* No importa el orden en el que se ponga ::after y ::before */
+
 /* COSAS IMPORTANTES QUE SABER PARA HACER LOS EJERCICIOS */
 
 .box {

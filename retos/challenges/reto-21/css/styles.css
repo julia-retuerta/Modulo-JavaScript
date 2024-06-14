@@ -2,7 +2,7 @@
 IMPORTANTE: USAR UN SOLO DIV
 Colors:
   Background: #0b2429
-  Yellow:#F3AC3C
+  Yellow: #F3AC3C
 */
 
 .box {
@@ -10,4 +10,11 @@ Colors:
 }
 
 .triangle {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 200px;
+  height: 200px;
+  background-color: #f3ac3c;
+  rotate: 45deg;
 }

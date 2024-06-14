@@ -15,9 +15,24 @@ Colors:
 }
 
 .circle {
+  position: relative;
   width: 100px;
   height: 100px;
   border-radius: 50%;
   background-color: #e08027;
   box-shadow: 0 0 0 30px #824b20;
+}
+
+.circle::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 20px solid #fff58f;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  rotate: 45deg;
 }
