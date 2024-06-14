@@ -1,0 +1,31 @@
+/* 
+IMPORTANTE: USAR UN SOLO DIV
+Colors:
+  Background: #AA445F
+  Yellow: #F7EC7D
+  Orange: #E38F66
+*/
+
+.box {
+  background-color: #aa445f;
+}
+
+.shape {
+  position: absolute;
+  top: 50px;
+  left: 75px;
+  width: 100px;
+  height: 200px;
+  border-radius: 100px 0 0 100px;
+  background-color: #f7ec7d;
+}
+
+.shape::before {
+  content: '';
+  position: absolute;
+  left: 150px;
+  width: 100px;
+  height: 200px;
+  border-radius: 0 100px 100px 0;
+  background-color: #e38f66;
+}

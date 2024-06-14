@@ -14,8 +14,23 @@ Colors:
 }
 
 .shape {
+  position: relative;
   width: 200px;
   height: 200px;
   border-radius: 50%;
   background-color: #aa445f;
+}
+
+.shape::after {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 30px solid #f7ec7d;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  rotate: 45deg;
 }

@@ -1,0 +1,39 @@
+/* 
+IMPORTANTE: USAR UN SOLO DIV
+Colors:
+  Background: #293462
+  Yellow: #FFF1C1
+  Red: #FE5F55
+  Dark Red: #A64942
+*/
+
+.box {
+  background-color: #293462;
+}
+
+.square {
+  width: 200px;
+  height: 200px;
+  background-color: #fff1c1;
+}
+
+.square::before {
+  content: '';
+  position: absolute;
+  left: 200px;
+  width: 100px;
+  height: 150px;
+  background-color: #fe5f55;
+  box-shadow: 0 50px #a64942;
+}
+
+.square::after {
+  content: '';
+  position: absolute;
+  top: 200px;
+  left: 0;
+  width: 150px;
+  height: 100px;
+  background-color: #fe5f55;
+  box-shadow: 50px 0 #a64942;
+}
