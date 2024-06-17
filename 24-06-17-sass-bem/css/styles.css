@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  background-color: #333;
+  font-family: sans-serif;
+  color: aliceblue;
+}
+
+.card {
+  width: 250px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #333;
+  background-color: orange;
+}
+
+.card--secondary {
+  background-color: purple;
+  color: white;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+}
+
+.button--rounded {
+  border-radius: 1rem;
+}

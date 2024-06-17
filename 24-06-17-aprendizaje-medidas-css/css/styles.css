@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  background-color: #333;
+  font-family: sans-serif;
+  color: aliceblue;
+}
+
+/* es mejor utilizar rem y em para tener una buena accesibilidad. Estas medidas se utilizan para prácticamente todo porque están pensadas para adaptarse a distintos tamaños */
+
+/* 1 rem = 16px, que es la medida por defecto de los navegadores */
+
+/* si cambia el contexto, em cambia. En rem no */
+
+/* la medida de px solo se usa para elementos que no van a cambiar nunca de tamaño, por ejemplo: un logo, un contenedor que no quieres que crezca de manera infinita... */
+
+.px-container {
+  font-size: 20px;
+}
+
+.px {
+  font-size: 32px;
+}
+
+.rem-container {
+  font-size: 60px;
+}
+
+.rem {
+  font-size: 2rem;
+}
+
+.em {
+  font-size: 40px;
+}
+
+.em {
+  font-size: 2em;
+}

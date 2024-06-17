@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medidas en CSS</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <!-- forma correcta -->
+
+    <div class="card">
+      <h2 class="card__title">Card</h2>
+      <p class="card__text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis adipisci, eos possimus accusamus voluptas quasi
+        voluptatibus aliquid soluta illum, cum veritatis nostrum dolore dolor provident inventore dicta itaque minima
+        beatae!
+      </p>
+      <button class="button">Click me</button>
+    </div>
+
+    <!-- forma correcta con modificador -->
+
+    <div class="card card--secondary">
+      <h2 class="card__title card__title--secondary">Card</h2>
+      <p class="card__text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis adipisci, eos possimus accusamus voluptas quasi
+        voluptatibus aliquid soluta illum, cum veritatis nostrum dolore dolor provident inventore dicta itaque minima
+        beatae!
+      </p>
+      <button class="button button--rounded">Click me</button>
+    </div>
+
+    <!-- esto nunca se hace así. Nunca utilizar más de dos guiones bajos -->
+
+    <div class="card">
+      <div class="card__info">
+        <h2 class="card__info__title">Card</h2>
+        <p class="card__info__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis adipisci, eos possimus accusamus voluptas quasi
+          voluptatibus aliquid soluta illum, cum veritatis nostrum dolore dolor provident inventore dicta itaque minima
+          beatae!
+        </p>
+        <button class="button">Click me</button>
+      </div>
+    </div>
+  </body>
+</html>
