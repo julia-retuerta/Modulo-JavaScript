@@ -4,7 +4,7 @@
 
 a {
   text-decoration: none;
-  /* color: inherit */
+  color: inherit;
 }
 
 body {
@@ -110,24 +110,4 @@ body {
 
 .caption--regular {
   color: #8bacd9;
-}
-
-/* Media query para aplicar solo en monitores y no en otros sitios */
-
-@media screen and (width>=768px) {
-  .card {
-    width: 350px;
-  }
-}
-
-/* se crea una media para meter todos los hover. Se meten aquí y no en el resto del código. Cada @media (hover: hover) se pone debajo de su respectivo código */
-
-@media (hover: hover) {
-  .card-image-container:hover .icon-view {
-    opacity: 1;
-  }
-
-  .card-image-container:hover::before {
-    opacity: 1;
-  }
 }

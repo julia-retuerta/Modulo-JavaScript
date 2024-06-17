@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  padding-inline: 1.5rem;
+  max-width: 1440px;
+  margin-inline: auto;
+  font-family: 'League Spartan', sans-serif;
+}
+
+@media screen and (width>768px) {
+  body {
+    padding: 7.375rem 10.3125rem;
+  }
+}
+.first-section {
+  display: flex;
+  flex-direction: column;
+  gap: 7.8125rem;
+}
+
+@media screen and (width>768px) {
+  .first-section {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.header {
+  text-align: center;
+}
+
+@media screen and (width>768px) {
+  .header {
+    width: 445px;
+    text-align: left;
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #512051;
+  letter-spacing: -1px;
+  margin-block: 5.125rem 1.0625rem;
+}
+
+@media screen and (width>768px) {
+  .title {
+    font-size: 3.5rem;
+    line-height: 48px;
+    letter-spacing: -2px;
+  }
+}
+
+.intro-text {
+  margin-block: 0 2.5rem;
+  width: 327px;
+  line-height: 1.5625rem;
+  font-size: 1.1875rem;
+  color: #927b91;
+}
+
+@media screen and (width>768px) {
+  .intro-text {
+    width: 100%;
+  }
+}
+
+.reviews {
+  margin-bottom: 3.125rem;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  background-color: #f9e8f8;
+  border-radius: 0.5rem;
+  height: 4.875rem;
+}
+
+@media screen and (width>768px) {
+  .review {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+  .second-review {
+    position: relative;
+    left: -50px;
+  }
+}
+
+.review-stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.9375rem;
+}
+
+@media screen and (width>768px) {
+  .review-stars {
+    margin-bottom: 0;
+  }
+}
+
+.review-text {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #512051;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (width>768px) {
+  .testimonials {
+    flex-direction: row;
+  }
+}
+
+.testimonial-card {
+  padding: 2rem 2.3rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  background-color: #512051;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-header-image {
+  width: 2.5rem;
+  border-radius: 50%;
+}
+
+.testimonial-header-text > * {
+  margin: 0.5rem;
+}
+
+.testimonial-name {
+  font-size: 1.0625rem;
+}
+
+.testimonial-status {
+  color: #ee69a4;
+}
+
+.testimonial-text {
+  line-height: 1.375rem;
+  margin: 0;
+}
