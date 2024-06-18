@@ -2,110 +2,193 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: 'League Spartan', sans-serif;
+img {
+  display: block;
+  max-width: 100%;
 }
 
-.main {
+body {
+  font-family: 'League Spartan', sans-serif;
+  max-width: 1440px;
+  padding: 5.125rem 1.5rem;
+  margin-inline: auto;
+}
+
+@media screen and (width>768px) {
+  body {
+    padding: 7.375rem 10.3125rem;
+  }
+}
+
+/* Esto no se pone así, se pone en el body  */
+/* .main {
   width: 80%;
   margin: 40px auto;
-}
+} */
 
 .customer-service {
   display: flex;
-  align-items: center;
-  gap: 125px;
-  margin-bottom: 71px;
+  flex-direction: column;
+  /* text-align: center; */
+  /* align-items: center; */
+  gap: 2.4375rem;
+  margin-bottom: 3.0625rem;
+}
+
+@media screen and (width>768px) {
+  .customer-service {
+    flex-direction: row;
+    align-items: center;
+    gap: 7.8125rem;
+    margin-bottom: 4.4375rem;
+  }
+}
+
+.text-block {
+  text-align: center;
+}
+
+@media screen and (width>768px) {
+  .text-block {
+    text-align: left;
+  }
 }
 
 .text-block__heading {
-  font-size: 56px;
+  font-size: 2.5rem;
   font-weight: 700;
-  line-height: 48px;
+  line-height: 2rem;
+  letter-spacing: -1.4px;
   color: #512051;
+  margin-top: 0;
+  margin-bottom: 1.0625rem;
+}
+
+@media screen and (width>768px) {
+  .text-block__heading {
+    font-size: 3.5rem;
+    line-height: 3rem;
+    letter-spacing: -2px;
+  }
 }
 
 .text-block__description {
-  font-size: 19px;
+  font-size: 1.1875rem;
   font-weight: 500;
-  line-height: 25px;
+  line-height: 1.5625rem;
   color: #927b91;
 }
 
 .banner {
   background-color: #f9e8f8;
-  border-radius: 8px;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.9375rem;
+  margin-bottom: 16px;
+  height: 78px;
+  text-align: center;
+}
+
+@media screen and (width>768px) {
+  .banner {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    height: 3.5rem;
+    width: 27.8125rem;
+  }
+}
+
+.banner__stars {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 32px;
-  margin-bottom: 16px;
-  width: 445px;
-  height: 56px;
+  gap: 0.5281rem;
 }
 
 .banner__text {
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 700;
   color: #512051;
 }
 
-.banner--spacing1 {
-  margin-left: 48px;
-}
+@media screen and (width>768px) {
+  .banner--spacing-1 {
+    position: relative;
+    left: 48px;
+  }
 
-.banner--spacing2 {
-  margin-left: 96px;
+  .banner--spacing-2 {
+    position: relative;
+    left: 96px;
+  }
 }
 
 .cards {
   display: flex;
-  gap: 30px;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media screen and (width>768px) {
+  .cards {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
 }
 
 .card {
   background-color: #512051;
-  border-radius: 8px;
-  padding: 40px 32px 35px 32px;
+  border-radius: 0.5rem;
+  padding-inline: 2rem;
+  padding-block: 2.5rem 2.1875rem;
 }
 
-.card--spacing1 {
-  margin-top: 16px;
-}
+@media screen and (width>768px) {
+  .card--spacing-1 {
+    position: relative;
+    top: 16px;
+  }
 
-.card--spacing2 {
-  margin-top: 32px;
+  .card--spacing-2 {
+    position: relative;
+    top: 32px;
+  }
 }
 
 .user {
   display: flex;
   align-items: center;
-  gap: 23px;
+  gap: 1.4375rem;
+  margin-bottom: 1.5rem;
 }
 
 .user__img {
   border-radius: 50%;
-  width: 40px;
+  width: 2.5rem;
   height: 40px;
 }
 
 .user__info__heading {
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 700;
   color: white;
-  margin: 4px 0;
+  margin-block: 0.25rem;
 }
 
 .user__info__description {
-  font-size: 17px;
+  font-size: 1.0625rem;
   color: #ee69a4;
-  margin-top: 4px;
+  margin-top: 0.25rem;
 }
 
 .review {
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 500;
   color: white;
-  line-height: 22px;
+  line-height: 1.375rem;
+  margin: 0;
 }
